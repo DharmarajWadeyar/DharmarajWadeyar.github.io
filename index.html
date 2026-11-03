@@ -907,43 +907,48 @@ themeToggle.addEventListener('click',()=>{
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
-const logos = [
-  // Windows Server
-  { n: 'Windows Server', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg', cat: 'windows' },
-  { n: 'Active Directory DS', u: 'https://img.icons8.com/color/48/domain.png', cat: 'windows' },
-  { n: 'Group Policy (GPO)', u: 'https://img.icons8.com/color/48/group-task.png', cat: 'windows' },
-  { n: 'DNS Server', u: 'https://img.icons8.com/color/48/dns.png', cat: 'windows' },
-  { n: 'DHCP Server', u: 'https://img.icons8.com/color/48/dynamic-ip.png', cat: 'windows' },
-  { n: 'RAID1 Configuration', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'windows' },
-  { n: 'IIS & FTP Server', u: 'https://img.icons8.com/color/48/file-transfer.png', cat: 'windows' },
 
-  // Linux Administration
+const logos = [
+  // Windows Server - RESUME MATCHED
+  { n: 'Windows Server 2012', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg', cat: 'windows' },
+  { n: 'AD DS & Domain Controller', u: 'https://img.icons8.com/color/48/domain.png', cat: 'windows' },
+  { n: 'OU Management', u: 'https://img.icons8.com/color/48/organization.png', cat: 'windows' },
+  { n: 'User & Group Management', u: 'https://img.icons8.com/color/48/user-group-man-woman.png', cat: 'windows' },
+  { n: 'Files & Folder Permissions', u: 'https://img.icons8.com/color/48/folder-invoices--v1.png', cat: 'windows' }, // FIXED - was folder.png
+  { n: 'Group Policy (GPO)', u: 'https://img.icons8.com/color/48/group-task.png', cat: 'windows' },
+  { n: 'Disk Management (RAID1)', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'windows' },
+  { n: 'IIS & FTP Server', u: 'https://img.icons8.com/color/48/server.png', cat: 'windows' }, // FIXED - was file-transfer.png
+
+  // Linux Administration - RESUME MATCHED
   { n: 'Linux Administration', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg', cat: 'linux' },
   { n: 'User & Group Management', u: 'https://img.icons8.com/color/48/user-group-man-woman.png', cat: 'linux' },
-  { n: 'File Permissions', u: 'https://img.icons8.com/color/48/privacy.png', cat: 'linux' },
+  { n: 'File Permissions & Sudo', u: 'https://img.icons8.com/color/48/privacy.png', cat: 'linux' },
+  { n: 'Static IP (NIC Config)', u: 'https://img.icons8.com/color/48/network-card.png', cat: 'linux' },
   { n: 'YUM Package Management', u: 'https://img.icons8.com/color/48/package.png', cat: 'linux' },
+  { n: 'Hostname Resolution', u: 'https://img.icons8.com/color/48/dns.png', cat: 'linux' },
+  { n: 'Disk Partitioning & Swap', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'linux' }, // FIXED - was hard-disk.png
   { n: 'Apache Web Server', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg', cat: 'linux' },
-  { n: 'Disk Partitioning', u: 'https://img.icons8.com/color/48/hard-disk.png', cat: 'linux' },
 
-  // Networking Concepts
+  // Networking Concepts - RESUME MATCHED
   { n: 'TCP/IP Protocol', u: 'https://img.icons8.com/color/48/network-cable.png', cat: 'networking' },
   { n: 'IPv4 Addressing', u: 'https://img.icons8.com/color/48/ip-address.png', cat: 'networking' },
-  { n: 'Subnetting', u: 'https://img.icons8.com/color/48/subnet.png', cat: 'networking' },
+  { n: 'Subnetting', u: 'https://img.icons8.com/color/48/network.png', cat: 'networking' }, // FIXED - was subnet.png
   { n: 'Static Routing', u: 'https://img.icons8.com/color/48/router.png', cat: 'networking' },
-  { n: 'Firewall Configuration', u: 'https://img.icons8.com/color/48/firewall.png', cat: 'networking' },
-  { n: 'VPN Setup', u: 'https://img.icons8.com/color/48/vpn.png', cat: 'networking' },
+  { n: 'Routing Tables', u: 'https://img.icons8.com/color/48/route.png', cat: 'networking' },
+  { n: 'Cisco IOS Basics', u: 'https://img.icons8.com/color/48/cisco-router.png', cat: 'networking' },
+  { n: 'DHCP Server', u: 'https://img.icons8.com/color/48/ip-address.png', cat: 'networking' }, // FIXED - was dynamic-ip.png
+  { n: 'Network Troubleshooting', u: 'https://img.icons8.com/color/48/error--v1.png', cat: 'networking' }, // FIXED - was connected-no.png
 
-  // AWS Cloud - as per resume
+  // AWS Cloud - RESUME MATCHED
   { n: 'EC2 Instances', u: 'https://icon.icepanel.io/AWS/svg/Compute/EC2.svg', cat: 'aws' },
-  { n: 'EBS Storage', u: 'https://icon.icepanel.io/AWS/svg/Storage/Elastic-Block-Store.svg', cat: 'aws' },
-  { n: 'VPC Public/Private', u: 'https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Virtual-Private-Cloud.svg', cat: 'aws' },
-  { n: 'Internet Gateway (IGW)', u: 'https://img.icons8.com/color/48/internet.png', cat: 'aws' },
-  { n: 'NAT Gateway', u: 'https://img.icons8.com/color/48/gateway.png', cat: 'aws' },
-  { n: 'CloudFormation', u: 'https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg', cat: 'aws' },
-  { n: 'Auto Scaling Group', u: 'https://img.icons8.com/color/48/cloud-sync.png', cat: 'aws' },
-  { n: 'RDS MySQL Database', u: 'https://icon.icepanel.io/AWS/svg/Database/RDS.svg', cat: 'aws' },
+  { n: 'EBS Storage & Snapshot', u: 'https://icon.icepanel.io/AWS/svg/Storage/Elastic-Block-Store.svg', cat: 'aws' },
+  { n: 'VPC (Custom VPC)', u: 'https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Virtual-Private-Cloud.svg', cat: 'aws' },
+   { n: 'Internet Gateway (IGW)', u: 'https://img.icons8.com/color/48/internet--v1.png', cat: 'aws' }, // FIXED - was VPC-Internet-Gateway.svg
+{ n: 'NAT Gateway', u: 'https://img.icons8.com/color/48/switch.png', cat: 'aws' },
+ { n: 'CloudFormation (IaC)', u: 'https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg', cat: 'aws' },
+  { n: 'Auto Scaling Group', u: 'https://img.icons8.com/color/48/cloud-sync.png', cat: 'aws' }, // FIXED - valid 48 path
+  { n: 'RDS MySQL & Security Groups', u: 'https://icon.icepanel.io/AWS/svg/Database/RDS.svg', cat: 'aws' },
 ];
-
 
     const globe = document.getElementById('globe');
     const tip = document.getElementById('globe-tip');
