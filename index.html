@@ -486,7 +486,13 @@ body.dark #certs{background:linear-gradient(135deg,#0e1933 0%,#070a17 100%) !imp
 body.dark #labs{background:#070a17}
 body.dark #journey{background:#0f1426 !important;}
 body.dark .timeline::after{
-  background-image: linear-gradient(to top, transparent, #ffffff 60%, transparent) !important;
+/* MAIN LINE WHITE FLOW  */
+  /* background-image: linear-gradient(to top, transparent, #ffffff 60%, transparent) !important; */
+
+/* BLUEWHITE GRAD LINE FLOW */
+background-image: linear-gradient(to top, transparent, #1e6bff 10%, #8ab0ff 40%, #ffffff 85%, transparent) !important;
+background-size: 100% 220px !important; 
+
   background-size: 100% 140px !important;
   background-repeat: no-repeat !important;
 }
@@ -498,46 +504,48 @@ body.dark .divider-line{background:#ffffff !important}
 body.dark #themeToggle{border-color:#24304f;color:#eef2ff;background:rgba(255,255,255,.06)}
 
 /* RESPONSIVE FIX */
+
 @media (max-width: 1024px) {
   .container { width: 100%; padding-inline: 24px; }
-
-  .tech-arsenal-layout { grid-template-columns: 1fr; }
+  .tech-arsenal-layout { grid-template-columns: 1fr; gap:32px; }
   .arsenal-right { order: -1; }
-
   #labs .grid3 { grid-template-columns: repeat(2, 1fr) !important; }
-
   #connect .container > div { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 700px) {
   .container { padding-inline: 16px; }
-
-  .section { padding: 48px 0; }
-
+  .section { padding: 48px 16px; }
   .nav-links { display: none; }
+  .hero { padding: 65px 16px 55px; }
+  .hero h1 { font-size: clamp(32px, 10vw, 48px); }
 
-  .hero { padding: 65px 0 55px; }
-  .hero h1 { font-size: clamp(36px, 10vw, 52px); }
-
-  .grid2, .grid3,
-  #labs .grid3,
-
+  .tech-arsenal-layout { grid-template-columns: 1fr !important; }
   .globe-wrap {
     width: 100% !important;
-    max-width: 360px;
-    height: auto !important;
-    aspect-ratio: 1;
+    max-width: 320px !important;
+    height: 320px !important;
+    margin: 0 auto 20px;
+    aspect-ratio: unset !important;
   }
+  .logo-item { width: 40px !important; height: 40px !important; }
+  .logo-item img { width: 20px !important; height: 20px !important; }
+
+  #labs .grid3 { 
+    grid-template-columns: 1fr !important; 
+    gap: 16px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  #labs .card { padding: 18px !important; }
 
   #labs .container > div:nth-child(2) {
-    flex-wrap: wrap !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
   }
 
-  #connect .container > div {
-    grid-template-columns: 1fr !important;
-  }
-
-  footer { padding: 20px 12px !important; }
+  #connect .container > div { grid-template-columns: 1fr !important; }
 }
 
 @media (min-width: 1600px) {
@@ -700,7 +708,7 @@ Open for L1 Support roles to get hands-on with real tickets, real servers, real 
 <!-- Project 1 - RESUME MATCHED -->
 <div class="card">
   <div class="badge" style="margin-bottom:12px"> Windows Server • AD DS • RAID1 • GPO</div>
-  <h3>Project 1: Employee Onboarding & File Security</h3>
+  <h3>Lab 1: Employee Onboarding & File Security</h3>
   <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Configured RAID1 for HR data redundancy. Created HR OU in AD DS, created HR Group and user, added user to HR Group. Created HR-Data share on RAID volume with NTFS & Share Permissions restricted to HR Group only. Implemented GPO linked to HR OU to block Control Panel and deployed FTP via IIS with AD authentication, verified share and FTP access from client.</p>
   <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: AD DS, OU, Security Groups, GPO, RAID1, NTFS & Share Permissions, IIS FTP</p>
 </div>
@@ -708,7 +716,7 @@ Open for L1 Support roles to get hands-on with real tickets, real servers, real 
 <!-- Project 2 - RESUME MATCHED -->
 <div class="card">
   <div class="badge" style="margin-bottom:12px">Networking • Subnetting • DHCP • CPT</div>
-  <h3>Project 2: Branch Office Routing with Subnetting and DHCP</h3>
+  <h3>Lab 2: Branch Office Routing with Subnetting and DHCP</h3>
   <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Performed subnetting for 2 branches and link network, configured routers, switches, PCs and LAN/WAN interfaces in Cisco Packet Tracer as per topology. Verified end-to-end connectivity via ping and traceroute, troubleshot using show ip route and ipconfig, documented IP scheme and routing table.</p>
   <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: Cisco Packet Tracer, Routers, Switches, Static Routing, DHCP, Subnetting</p>
 </div>
@@ -716,15 +724,15 @@ Open for L1 Support roles to get hands-on with real tickets, real servers, real 
 <!-- Project 3 - Already correct -->
 <div class="card">
   <div class="badge" style="margin-bottom:12px">Linux • Apache • Disk Partition</div>
-  <h3>Project 3: Linux Web Server Setup & Troubleshooting</h3>
+  <h3>Lab 3: Linux Web Server Setup & Troubleshooting</h3>
   <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Configured static IP, partitioned disk for /var/www and configured swap, installed Apache via YUM and managed service via systemctl. Created devuser with ownership & permissions on web directory, performed troubleshooting via service status and logs, configured hostname resolution.</p>
   <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: Linux, Apache (httpd), Disk Partitioning, Mount, Swap, User Management</p>
 </div>
 
 <!-- Project 4 - Already correct -->
 <div class="card">
-  <div class="badge" style="margin-bottom:12px"> AWS • VPC • RDS • Backup</div>
-  <h3>Project 4: 2-Tier VPC with Backup Strategy</h3>
+  <div class="badge" style="margin-bottom:12px">AWS • VPC • RDS • Backup</div>
+  <h3>Lab 4: 2-Tier VPC with Backup Strategy</h3>
   <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Created Custom VPC with Public Subnet (web) and Private Subnet (DB), configured IGW, NAT Gateway and Route Tables. Hosted website on EC2 in Public and RDS MySQL in Private. Implemented backup strategy with extra EBS for data, manual Snapshot and AMI for quick recovery, deployed infra via CloudFormation IaC and tested High Availability with ASG. Verified private RDS connectivity via Workbench inside public EC2.</p>
   <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: VPC, Public/Private Subnets, IGW, NAT, EC2, RDS MySQL, EBS, Snapshot, AMI, CloudFormation, ASG, Security Groups</p>
 </div>
