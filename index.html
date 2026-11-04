@@ -1673,17 +1673,21 @@ body.dark .modal-tab.active{
 
 
 <!-- DMCA NOTICE | DO NOT COPY OR REUSE CODE WITHPUT OWNER PERMISSION -->
-  <script>
-// Block right-click and inspect shortcuts
+<script>
+// Block right-click and inspect shortcuts - FULL
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.addEventListener('keydown', e => {
-  if(e.keyCode==123 || (e.ctrlKey && e.shiftKey && (e.keyCode==73 || e.keyCode==74)) || (e.ctrlKey && e.keyCode==85)){
+  // F12
+  if(e.keyCode==123) e.preventDefault();
+  // Ctrl+U (View Source)
+  if(e.ctrlKey && e.keyCode==85) e.preventDefault();
+  // Ctrl+Shift+I, J, C, K (Inspect)
+  if(e.ctrlKey && e.shiftKey && (e.keyCode==73 || e.keyCode==74 || e.keyCode==67 || e.keyCode==75)){
     e.preventDefault();
   }
 });
 console.log("%c© 2026 Dharmaraj Wadeyar - DMCA Protected - github.com/DharmarajWadeyar", "color:red;font-size:20px;font-weight:bold;");
 </script>
-
 </body>
 
 </html>
