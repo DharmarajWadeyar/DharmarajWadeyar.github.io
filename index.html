@@ -1925,13 +1925,12 @@
   </script>
 
 <!-- GITHUB CHECK UPDATE CODE -->
+
+
 <script>
-fetch('https://api.github.com/repos/DharmarajWadeyar/DharmarajWadeyar.github.io/commits?per_page=1')
-  .then(r=>r.json())
-  .then(c=>{
-    const d = new Date(c[0].commit.committer.date);
-    document.getElementById('lastPush').textContent = ` • Last Modified: ${d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}`;
-  });
+// No API - uses page's own Last-Modified header from GitHub Pages
+const d = new Date(document.lastModified);
+document.getElementById('lastPush').textContent = ` • Last Modified: ${d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}`;
 
 document.getElementById('checkUpdate').onclick = () => {
   const last = document.getElementById('lastPush');
