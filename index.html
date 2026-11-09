@@ -26,8 +26,11 @@
       inset: 0;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
       transform: translateX(-100%);
-      animation: awsShine 2.2s infinite;
+      animation: none; /* Clean: was 2.2s infinite */
       pointer-events: none;
+    }
+    .gloss-anim:hover::after {
+      animation: awsShine .7s ease; /* Clean: hover only */
     }
 
     @keyframes awsShine {
@@ -41,7 +44,7 @@
     }
 
     #certs .card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-1px); /* Clean: was -3px */
       border-color: #1e6bff;
       box-shadow: 0 18px 40px rgba(16, 24, 60, .12)
     }
@@ -82,7 +85,7 @@
     }
 
     .tech-pill:hover {
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-1px); /* Clean: was -2px scale(1.02) */
       border-color: #1e6bff;
       background: #1a2744;
       color: #fff;
@@ -90,7 +93,7 @@
     }
 
     .tech-pill.active {
-      background: var(--grad);
+      background: #1E6BFF; /* Clean: was var(--grad) gradient, now flat blue grad theme primary */
       color: #fff;
       border-color: transparent;
       box-shadow: 0 8px 28px rgba(30, 107, 255, .55)
@@ -122,10 +125,10 @@
     }
 
     .logo-item:hover {
-      transform: translate3d(var(--x), var(--y), var(--z)) scale(1.7) !important;
+      transform: translate3d(var(--x), var(--y), var(--z)) scale(1.08) !important; /* Clean: was 1.7 */
       z-index: 999 !important;
       box-shadow: 0 0 0 2px #1e6bff, 0 16px 40px rgba(30, 107, 255, .6) !important;
-      filter: brightness(1.3);
+      filter: none; /* Clean: was brightness 1.3 */
     }
 
     .globe-wrap {
@@ -369,7 +372,7 @@
     }
 
     .btn-primary {
-      background: var(--grad);
+      background: #1E6BFF; /* Clean flat */
       color: white;
       box-shadow: 0 10px 24px rgba(30, 107, 255, .35)
     }
@@ -410,7 +413,7 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: var(--grad);
+      background: #1E6BFF; /* Clean: was var(--grad) */
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.45s ease;
@@ -434,7 +437,7 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: var(--grad);
+      background: #1E6BFF; /* Clean: was var(--grad) */
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
@@ -522,7 +525,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--grad);
+      background: #1E6BFF; /* Clean: was var(--grad) */
       box-shadow: 0 0 0 4px #e6efff
     }
 
@@ -551,7 +554,7 @@
     }
 
     .tl-item:before {
-      animation: dotPulse 2.8s infinite
+      animation: none; /* Clean: was dotPulse infinite */
     }
 
     .tl-item:nth-child(3):before {
@@ -606,7 +609,7 @@
     }
 
     body.dark #certs {
-      background: linear-gradient(135deg, #0e1933 0%, #070a17 100%) !important
+      background: #0e1933 !important; /* Clean: was grad */
     }
 
     body.dark #labs {
@@ -859,9 +862,16 @@
       border-radius: 999px;
       border: 1px solid #e6eaf2;
       background: white;
+      color: #111216;
       cursor: pointer;
       display: grid;
       place-items: center
+    }
+
+    body.dark .modal-close {
+      background: #1f2742;
+      border-color: #2a3654;
+      color: #eef2ff;
     }
 
     .modal-topo {
@@ -905,7 +915,7 @@
     }
 
     .modal-tab.active {
-      background: var(--grad);
+      background: #1E6BFF; /* Clean flat */
       color: white;
       border-color: transparent;
       box-shadow: 0 6px 16px rgba(30, 107, 255, .35)
@@ -939,7 +949,7 @@
     }
 
     .modal-tab.active {
-      background: var(--grad);
+      background: #1E6BFF; /* Clean flat */
       color: white;
       border-color: transparent
     }
@@ -979,23 +989,23 @@
 
     /* FIX: Tabs text visible in dark modal */
     .modal-tab {
-      background: #eef2ff;
+      background: #f8faff; /* Clean: was #eef2ff, single light */
       color: #111216 !important;
     }
 
     .modal-tab.active {
-      background: var(--grad) !important;
+      background: #1E6BFF !important; /* Clean: was var(--grad) */
       color: #fff !important;
     }
 
     body.dark .modal-tab {
-      background: #ffffff !important;
-      color: #111216 !important;
-      border: 1px solid #e6eaf2;
+      background: #1f2742 !important; /* Clean dark: was white */
+      color: #c8d0e0 !important;
+      border: 1px solid #2a3654 !important;
     }
 
     body.dark .modal-tab.active {
-      background: var(--grad) !important;
+      background: #1E6BFF !important; /* Clean: was var(--grad) */
       color: #fff !important;
     }
 
@@ -1031,20 +1041,37 @@
     }
 
     body.dark #labs .lab-filter:hover {
-      box-shadow: 0 8px 24px rgba(30, 107, 255, .45), 0 0 16px rgba(30, 107, 255, .25) !important;
+      box-shadow: none !important; /* Clean: was glow */
+      border-color: #1e6bff !important;
+    }
+
+
+
+    /* TYPING EFFECT HERO SECTION */
+    .typing-cursor {
+      display: inline-block;
+      margin-left: 2px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="navbar">
-<a href="" style="font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;cursor:pointer">
-  <div
-    style="width:32px;height:32px;border-radius:10px;background:var(--grad);display:grid;place-items:center;color:white;font-weight:800">
-    D
-  </div>
-  Dharmaraj W
-</a>
+    <a href=""
+      style="font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;cursor:pointer">
+      <div
+        style="width:32px;height:32px;border-radius:10px;background:#1E6BFF; /* Clean flat */display:grid;place-items:center;color:white;font-weight:800">
+        D
+      </div>
+      Dharmaraj W
+    </a>
     <div class="nav-links" id="navLinks">
       <a href="#tech">TECH</a><a href="#certs">CERTS</a><a href="#labs">LABS</a>
       <a href="#journey">JOURNEY</a>
@@ -1059,18 +1086,21 @@
   </div>
 
 
-<section id="home" class="hero grad">
+  <section id="home" class="hero grad">
     <div class="container">
       <div class="tech-pill"
-        style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(197,174,174,.349);font-size:11px;letter-spacing:.12em;margin-bottom:22px;font-weight:600;color:#fdfeffde">
+        style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2); /* Clean: was pinkish */font-size:11px;letter-spacing:.12em;margin-bottom:22px;font-weight:600;color:#ffffff">
         <span
           style="width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.25);display:inline-block"></span>
         AVAILABLE FOR L1 ROLES
       </div>
       <h1>Dharmaraj Wadeyar</h1>
       <div class="tag2">L1 SUPPORT ENGINEER</div>
-      <p class="sub">From building apps to keeping them up — with a focus on clean
-        tickets, documentation & proper escalation, not just quick fixes.</p>
+      <!-- <p class="sub">From building apps to keeping them up — with a focus on clean
+        tickets, documentation & proper escalation, not just quick fixes.</p> -->
+      <p class="sub">From building apps to keeping them up — with a focus on <span id="typing-text"></span><span
+          class="typing-cursor">|</span></p>
+
       <div style="display:flex;gap:12px;margin-top:28px;flex-wrap:wrap">
         <a class="btn btn-ghost tech-pill gloss-anim" href="#labs">🛠️ View Live Labs →</a>
         <a class="btn btn-primary tech-pill"
@@ -1085,7 +1115,7 @@
     <div class="container">
       <div style="display:flex;gap:32px;flex-wrap:wrap">
         <div style="flex:1;min-width:280px">
-          <div class="badge tech-pill">About</div>
+          <div class="badge">About</div>
           <h2 style="font-family:'Space Grotesk';font-size:36px;margin:14px 0 12px;letter-spacing:-.02em">From Developer
             to IT Infra
           </h2>
@@ -1110,12 +1140,12 @@
       <div class="tech-arsenal-layout">
         <!-- LHS -->
         <div class="arsenal-left">
-          <div class="tech-pill" style="font-weight:600; color:#fdfeffde">Tools & Technologies</div>
+          <div class="tech-pill" style="font-weight:600; color:#ffffff">Tools & Technologies</div>
           <h2
             style="font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,6vw,68px);line-height:.9;margin:18px 0 0;font-weight:800">
             CLOUD<br>
             <span
-              style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">STACK</span>
+              style="background:linear-gradient(135deg, #8AB0FF 0%, #1E6BFF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">STACK</span>
           </h2>
           <p style="margin:18px 0 0;max-width:480px;color:#9aa6bf;font-size:15px;line-height:1.7">The tools behind my
             labs — Windows Server, Linux, Networking & AWS — all revolving around one core. Hover on any icon or click
@@ -1140,16 +1170,14 @@
   <div id="globe-tip"></div>
 
   <!-- CERTIFICATIONS SECTION -->
-  <section id="certs" class="section"
-    style="background: linear-gradient(135deg, #9ec0ff 0%, #e2eeff 100%)
-">
+  <section id="certs" class="section" style="background: #f8faff">
     <div class="container">
-      <div class="badge tech-pill">CREDENTIALS</div>
+      <div class="badge">CREDENTIALS</div>
       <h2 style="font-family:'Space Grotesk';font-size:32px;margin:12px 0 22px">Verified Skills
       </h2>
 
       <div class="card" style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
-        <div class="cert-aws-box gloss-anim"
+        <div class="cert-aws-box"
           style="width:96px;height:96px;border-radius:16px;background:white;display:grid;place-items:center;overflow:hidden;border:1px solid #e6eaf2;padding:6px">
           <img src="https://insystechnologies.in/images/weblogo.jpg" alt="Insys Technologies"
             style="width:100%;height:100%;object-fit:contain">
@@ -1169,7 +1197,7 @@
   <!-- LABS SECTION -->
   <section id="labs" class="section">
     <div class="container">
-      <div class="badge tech-pill">LIVE BUILDS</div>
+      <div class="badge">LIVE BUILDS</div>
       <div
         style="display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:12px;margin:12px 0 22px">
         <h2 style="font-family:'Space Grotesk';font-size:32px;margin:0;line-height:1.1">Applied Infrastructure
@@ -1203,13 +1231,15 @@
         <div class="card lab-card" data-category="windows">
           <div class="badge" style="margin-bottom:12px"> Windows Server • AD DS • RAID1 • GPO</div>
           <h3>Lab 1: Employee Onboarding & File Security</h3>
-          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Secure employee onboarding on Windows Server — centralized user management, protected file sharing, policy hardening and controlled FTP access.</p>
+          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Secure employee onboarding on
+            Windows Server — centralized user management, protected file sharing, policy hardening and controlled FTP
+            access.</p>
           <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: AD DS, OU, Security Groups,
             GPO, RAID1, NTFS & Share Permissions, IIS FTP</p>
           <!-- CARD BUTTONS -->
           <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
             <button onclick="openLabModal(1)" class="tech-pill"
-              style="background:var(--grad);color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
+              style="background:#1E6BFF; /* Clean flat */color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
               📂 View Details
             </button>
 
@@ -1224,13 +1254,14 @@
         <div class="card lab-card" data-category="networking">
           <div class="badge" style="margin-bottom:12px">Networking • Subnetting • DHCP • CPT</div>
           <h3>Lab 2: Branch Office Routing with Subnetting and DHCP</h3>
-          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Branch office network design in Packet Tracer — subnet planning, DHCP and static routing with end-to-end connectivity validation.</p>
+          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Branch office network design in
+            Packet Tracer — subnet planning, DHCP and static routing with end-to-end connectivity validation.</p>
           <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: Cisco Packet Tracer,
             Routers, Switches, Static Routing, DHCP, Subnetting</p>
           <!-- CARD BUTTONS -->
           <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
             <button onclick="openLabModal(2)" class="tech-pill"
-              style="background:var(--grad);color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
+              style="background:#1E6BFF; /* Clean flat */color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
               📂 View Details
             </button>
 
@@ -1245,13 +1276,15 @@
         <div class="card lab-card" data-category="linux">
           <div class="badge" style="margin-bottom:12px">Linux • Apache • Disk Partition</div>
           <h3>Lab 3: Linux Web Server Setup & Troubleshooting</h3>
-          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Linux web server setup from scratch — networking, storage partitioning, Apache deployment, user permissions and service troubleshooting.</p>
+          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">Linux web server setup from
+            scratch — networking, storage partitioning, Apache deployment, user permissions and service troubleshooting.
+          </p>
           <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: Linux, Apache (httpd), Disk
             Partitioning, Mount, Swap, User Management</p>
           <!-- CARD BUTTONS -->
           <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
             <button onclick="openLabModal(3)" class="tech-pill"
-              style="background:var(--grad);color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
+              style="background:#1E6BFF; /* Clean flat */color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
               📂 View Details
             </button>
 
@@ -1266,13 +1299,15 @@
         <div class="card lab-card" data-category="aws">
           <div class="badge" style="margin-bottom:12px">AWS • VPC • RDS • Backup</div>
           <h3>Lab 4: 2-Tier VPC with Backup Strategy</h3>
-          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">2-tier secure architecture on AWS — custom VPC with isolated web and DB tiers, backup & recovery strategy, IaC deployment and HA testing..</p>
+          <p style="margin:10px 0 8px;color:var(--muted);font-size:13px;line-height:1.6">2-tier secure architecture on
+            AWS — custom VPC with isolated web and DB tiers, backup & recovery strategy, IaC deployment and HA testing..
+          </p>
           <p style="font-size:11px;color:#1e6bff;font-weight:600;letter-spacing:.04em">Tech: VPC, Public/Private
             Subnets, IGW, NAT, EC2, RDS MySQL, EBS, Snapshot, AMI, CloudFormation, ASG, Security Groups</p>
           <!-- CARD BUTTONS -->
           <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
             <button onclick="openLabModal(4)" class="tech-pill"
-              style="background:var(--grad);color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
+              style="background:#1E6BFF; /* Clean flat */color:white;border:0;padding:7px 14px;font-size:11px;font-weight:600;cursor:pointer">
               📂 View Details
             </button>
 
@@ -1287,16 +1322,17 @@
   </section>
 
   <!-- CARRER TIMELINE JOURNEY SECTION -->
-  <section id="journey" class="section" style="background:linear-gradient(135deg,#f5f7ff 0%,#f3f6ff 100%)">
+  <section id="journey" class="section" style="background:#f8faff">
     <div class="container">
-      <div class="badge tech-pill">CAREER TIMELINE</div>
+      <div class="badge">CAREER TIMELINE</div>
       <h2 style="font-family:'Space Grotesk';font-size:32px;margin:12px 0 28px">Stack Trace: Path</h2>
       <div class="timeline">
 
         <div class="tl-item">
           <div style="font-weight:700;font-size:12px;letter-spacing:.12em;color:#1e6bff">Apr 2026 - Oct 2026</div>
           <h3 style="margin:6px 0">Professional Training: Cloud Computing with AWS</h3>
-          <p style="color:var(--muted)">Classroom Training + Live Projects — Windows Server, Linux, Networking, AWS. Built live labs (see Labs section).</p>
+          <p style="color:var(--muted)">Classroom Training + Live Projects — Windows Server, Linux, Networking, AWS.
+            Built live labs (see Labs section).</p>
         </div>
 
         <div class="tl-item">
@@ -1312,15 +1348,17 @@
           <div style="font-weight:700;font-size:12px;letter-spacing:.12em;color:#1e6bff">Jan 2025 - Nov 2025</div>
           <h3 style="margin:6px 0">Software Developer @Nextworld Solutions Pvt Ltd</h3>
           <p style="color:var(--muted)">Developed dashboards,
-            event calendars, reusable Web Forms controls and improved UI for PLEA & SEIU Membership Management Systems<br><span
-              style="font-size:11px;color:#1e6bff;font-weight:600">Tech: .NET MVC, ASP.NET Web Forms, HTML, CSS,
+            event calendars, reusable Web Forms controls and improved UI for PLEA & SEIU Membership Management
+            Systems<br><span style="font-size:11px;color:#1e6bff;font-weight:600">Tech: .NET MVC, ASP.NET Web Forms,
+              HTML, CSS,
               Bootstrap, MS SQL Server</span></p>
         </div>
 
         <div class="tl-item">
           <div style="font-weight:700;font-size:12px;letter-spacing:.12em;color:#1e6bff">Dec 2022 - Mar 2023</div>
           <h3 style="margin:6px 0">Web Developer Intern @MeterCab Online Booking Service (OPC) Pvt Ltd</h3>
-          <p style="color:var(--muted)">Designed static pages, Canvas posters & 3D logo for Metercab app.<br><span style="font-size:11px;color:#1e6bff;font-weight:600">Tech: HTML, CSS,
+          <p style="color:var(--muted)">Designed static pages, Canvas posters & 3D logo for Metercab app.<br><span
+              style="font-size:11px;color:#1e6bff;font-weight:600">Tech: HTML, CSS,
               JavaScript, PHP Basics & Canvas</span></p>
         </div>
 
@@ -1328,7 +1366,7 @@
           <div style="font-weight:700;font-size:12px;letter-spacing:.12em;color:#1e6bff">2021 - 2023</div>
           <h3 style="margin:6px 0">Master of Science in Computer Science - S. K. Somaiya College, Mumbai Vidyavihar</h3>
           <p style="color:var(--muted)">MSc Computer Science
-</p>
+          </p>
         </div>
 
         <div class="tl-item">
@@ -1336,7 +1374,7 @@
           <h3 style="margin:6px 0">Bachelor of Science in Computer Science - V.P.M's B.N. Bandodkar College of Science,
             Thane</h3>
           <p style="color:var(--muted)">BSc Computer Science
-</p>
+          </p>
         </div>
 
         <div class="tl-item">
@@ -1355,7 +1393,7 @@
       <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:32px">
         <div>
           <div class="tech-pill"
-            style="display:inline-flex;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);font-size:11px;letter-spacing:.12em;color:#fdfeffde;font-weight: 600">
+            style="display:inline-flex;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);font-size:11px;letter-spacing:.12em;color:#ffffff;font-weight: 600">
             START A CONVERSATION</div>
           <h2 style="font-family:'Space Grotesk';font-size:42px;margin:18px 0 12px;line-height:1">Let's Connect</h2>
           <!-- <p style="opacity:.86">Reach me at:</p> -->
@@ -1387,7 +1425,7 @@
               style="padding:10px 12px;border:1px solid #e6eaf2;border-radius:10px;font-size:14px" />
             <textarea name="message" rows="4" placeholder="Message" required
               style="padding:10px 12px;border:1px solid #e6eaf2;border-radius:10px;font-size:14px;resize:vertical"></textarea>
-            <button type="submit" class="btn btn-primary gloss-anim"
+            <button type="submit" class="btn btn-primary"
               style="justify-content:center;display:flex;align-items:center;gap:8px">
               <img src="https://img.icons8.com/fluency/48/paper-plane.png"
                 style="width:18px;height:18px;filter:brightness(0) invert(1)"> Send Message
@@ -1399,8 +1437,10 @@
     </div>
   </section>
 
-<footer style="padding:28px;text-align:center;color:var(--muted);font-size:13px">© 2026 Dharmaraj Wadeyar • Built for Uptime <span id="lastPush">
-</span> • <span id="checkUpdate" style="cursor:pointer; text-decoration: underline;">☑Check for update</span><span id="updateStatus"></span></footer>
+  <footer style="padding:28px;text-align:center;color:var(--muted);font-size:13px">© 2026 Dharmaraj Wadeyar • Built for
+    Uptime <span id="lastPush">
+    </span> • <span id="checkUpdate" style="cursor:pointer; text-decoration: underline;">☑Check for update</span><span
+      id="updateStatus"></span></footer>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1427,14 +1467,13 @@
         method: "POST",
         data: $(this).serialize(),
         success: function () {
-          $status.text("✓ Message Sent! I'll Get Back To You Soon.").css({color: "green", display: "block"});
+          $status.text("✓ Message delivered!").css({color: "green", display: "block"});
           $("#sheetForm")[0].reset();
           $btn.prop("disabled", false).html('<img src="https://img.icons8.com/fluency/48/paper-plane.png" style="width:18px;height:18px;filter:brightness(0) invert(1)"> Send Message');
           setTimeout(() => $("#sheetStatus").fadeOut(), 3000);
         },
         error: function () {
-          $status.text("☁️ Looks Like My Server Failed To Respond! — Or Check Your Internet And Send Again!").css({color: "#1e6bff", display: "block"});
-          $("#sheetForm")[0].reset();
+          $status.text("Couldn't send message. Please try again.").css({color: "#d32f2f", display: "block"});
           $btn.prop("disabled", false).html('<img src="https://img.icons8.com/fluency/48/paper-plane.png" style="width:18px;height:18px;filter:brightness(0) invert(1)"> Send Message');
           setTimeout(() => $("#sheetStatus").fadeOut(), 3000);
         }
@@ -1642,7 +1681,7 @@
     function openLabModal(id) {
       const d = labData[id];
       document.getElementById('modalBody').innerHTML = `
-    <div class="badge tech-pill" style="margin-bottom:10px">${d.badge}</div>
+    <div class="badge" style="margin-bottom:10px">${d.badge}</div>
     <h2 style="font-family:'Space Grotesk';font-size:22px;margin:8px 0">${d.title}</h2>
     <p style="color:var(--muted);font-size:13px">${d.overview}</p>
 
@@ -1678,7 +1717,7 @@
     </div>
 
     <div style="display:flex;gap:8px;justify-content:center;margin-top:18px">
-  <button onclick="closeLabModal()" class="tech-pill" style="background:var(--grad);color:white;border:0;padding:8px 20px;font-size:11px;cursor:pointer;font-weight:600;box-shadow:0 6px 16px rgba(30,107,255,.35)">Close</button>
+  <button onclick="closeLabModal()" class="tech-pill" style="background:#1E6BFF; /* Clean flat */color:white;border:0;padding:8px 20px;font-size:11px;cursor:pointer;font-weight:600;box-shadow:0 6px 16px rgba(30,107,255,.35)">Close</button>
     </div>`;
       document.getElementById('labModal').classList.add('active');
     }
@@ -1869,10 +1908,10 @@
       list.innerHTML = html || `<div style="padding:20px;text-align:center;color:#5b6478">No results</div>`;
       updateActive();
     }
-       function updateActive() {
+    function updateActive() {
       const items = document.querySelectorAll('.cmdk-item');
       items.forEach((el, i) => el.classList.toggle('active', i === sel));
-      items[sel]?.scrollIntoView({block:'nearest'});
+      items[sel]?.scrollIntoView({block: 'nearest'});
     }
     function execCmdk(d) {
       if (!d) return;
@@ -1924,33 +1963,55 @@
     });
   </script>
 
-<!-- GITHUB CHECK UPDATE CODE -->
+  <!-- GITHUB CHECK UPDATE CODE -->
 
 
-<script>
-// No API - uses page's own Last-Modified header from GitHub Pages
-const d = new Date(document.lastModified);
-document.getElementById('lastPush').textContent = ` • Last Modified: ${d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}`;
+  <script>
+    // No API - uses page's own Last-Modified header from GitHub Pages
+    const d = new Date(document.lastModified);
+    document.getElementById('lastPush').textContent = ` • Last Modified: ${d.toLocaleDateString('en-IN', {day: 'numeric', month: 'short', year: 'numeric'})}`;
 
-document.getElementById('checkUpdate').onclick = () => {
-  const last = document.getElementById('lastPush');
-  const btn = document.getElementById('checkUpdate');
-  const st = document.getElementById('updateStatus');
-  last.style.display = 'none';
-  btn.style.display = 'none';
-  st.textContent = 'Checking...';
-  setTimeout(()=>{
-    st.textContent = 'Live On Latest!';
-    setTimeout(()=>{
-      st.textContent = '';
-      last.style.display = 'inline';
-      btn.style.display = 'inline';
-    }, 3000);
-  }, 600);
-};
-</script>
+    document.getElementById('checkUpdate').onclick = () => {
+      const last = document.getElementById('lastPush');
+      const btn = document.getElementById('checkUpdate');
+      const st = document.getElementById('updateStatus');
+      last.style.display = 'none';
+      btn.style.display = 'none';
+      st.textContent = 'Checking...';
+      setTimeout(() => {
+        st.textContent = 'Live On Latest!';
+        setTimeout(() => {
+          st.textContent = '';
+          last.style.display = 'inline';
+          btn.style.display = 'inline';
+        }, 3000);
+      }, 600);
+    };
+  </script>
 
 
+  <!-- HERO TYPING EFFECT -->
+  <script>
+    const typingWords = ["clean tickets.", "documentation.", "proper escalation.", "uptime."];
+    let w = 0, c = 0, deleting = false;
+    const typingEl = document.getElementById('typing-text');
+
+    function typeLoop() {
+      const word = typingWords[w];
+      if (!deleting) {
+        c++;
+        typingEl.textContent = word.slice(0, c);
+        if (c === word.length) {deleting = true; return setTimeout(typeLoop, 1200);}
+        return setTimeout(typeLoop, 80);
+      } else {
+        c--;
+        typingEl.textContent = word.slice(0, c);
+        if (c === 0) {deleting = false; w = (w + 1) % typingWords.length;}
+        return setTimeout(typeLoop, 40);
+      }
+    }
+    typeLoop();
+  </script>
 
   <!-- DMCA NOTICE | DO NOT COPY OR REUSE CODE WITHPUT OWNER PERMISSION -->
   <script>
