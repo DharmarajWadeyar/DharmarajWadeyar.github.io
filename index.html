@@ -3437,6 +3437,31 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       border: 1px solid #BAE6FD !important;
       box-shadow: none !important;
     }
+
+    /* LIGHT DARK MODE TOGGLE SHINE GLOSS*/
+    #themeToggle {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #themeToggle::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .55), transparent);
+      transform: translateX(-100%);
+      pointer-events: none;
+    }
+
+    #themeToggle:hover::after {
+      animation: awsShine .7s ease;
+    }
+
+    @keyframes awsShine {
+      to {
+        transform: translateX(100%);
+      }
+    }
   </style>
 </head>
 
