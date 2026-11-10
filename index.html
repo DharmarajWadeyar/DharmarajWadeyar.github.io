@@ -4163,6 +4163,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
     // ---------- State ----------
     let isDark = false;
+    try { isDark = localStorage.getItem("theme") === "dark"; } catch (e) { }
     let labsFilter = "All";
     let phraseIndex = 0;
 
@@ -4181,9 +4182,16 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       themeBtn.addEventListener("click", function () {
         isDark = !isDark;
         document.body.classList.toggle("dark", isDark);
+        try { localStorage.setItem("theme", isDark ? "dark" : "light"); } catch (e) { }
         themeBtn.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
         themeBtn.innerHTML = isDark ? SUN_SVG : MOON_SVG;
       });
+    }
+
+    if (isDark && themeBtn) {
+      document.body.classList.add("dark");
+      themeBtn.setAttribute("aria-label", "Switch to light mode");
+      themeBtn.innerHTML = SUN_SVG;
     }
 
     // ---------- Typing effect (hero) ----------
