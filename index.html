@@ -3035,6 +3035,408 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     }
 
     /* ===== END CERTS FILTER ===== */
+
+
+    /* LABS - 3-col desktop, 2-col tablet, 1-col mobile, show 3 only */
+    #labsGrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 641px) {
+      #labsGrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #labsGrid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .lab-count {
+      opacity: .85;
+      font-weight: 700;
+    }
+
+    /* ===== LABS - Pagination + Search (Labs only) ===== */
+    #labsSearchWrap {
+      margin-top: 18px;
+    }
+
+    #labsSearch {
+      width: 100%;
+    }
+
+    #labsShowing {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    #labsPagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    #labsPagination .pill:disabled {
+      opacity: .45;
+      cursor: default;
+    }
+
+    #labsPageInfo {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      min-width: 92px;
+      text-align: center;
+    }
+
+    #labsNoResults {
+      display: none;
+      margin-top: 20px;
+      padding: 16px 18px;
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+
+
+    /* CERTIFICATIONS CARDS CSS */
+    #certsGrid {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    @media (max-width: 1024px) {
+      #certsGrid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #certsGrid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    #certsSearchWrap {
+      margin-top: 18px;
+    }
+
+    #certsSearch {
+      width: 100%;
+    }
+
+    #certsShowing {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    #certsPagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    #certsPagination .pill:disabled {
+      opacity: .45;
+      cursor: default;
+    }
+
+    #certsPageInfo {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      min-width: 92px;
+      text-align: center;
+    }
+
+    #certsNoResults {
+      display: none;
+      margin-top: 20px;
+      padding: 16px 18px;
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* New dark card - Light + Dark dono me same dikhega, isliye fixed dark bg hai */
+    .cert-card.cert-dark {
+      background: linear-gradient(180deg, #0E4A6E 0%, #082F49 100%) !important;
+      color: #F0F9FF !important;
+      border: 1px solid #155E75 !important;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cert-card.cert-dark h3 {
+      color: #FFFFFF;
+    }
+
+    .cert-card.cert-dark .cert-sub {
+      color: #BAE6FD;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .cert-card.cert-dark ul {
+      color: #E0F2FE;
+    }
+
+    .cert-card.cert-dark .cert-footer {
+      border-top: 1px solid rgba(255, 255, 255, .18) !important;
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    .cert-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      width: fit-content;
+    }
+
+    .cert-badge-training {
+      background: #E0F2FE;
+      color: #0C4A6E;
+    }
+
+    .cert-badge-cert {
+      background: #DCFCE7;
+      color: #065F46;
+    }
+
+    .cert-dummy {
+      display: inline-flex;
+      margin-left: 8px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #FEF08A;
+      color: #854D0E;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .cert-dark-btn {
+      height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: #FFFFFF;
+      color: #0C4A6E;
+      font-weight: 800;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .cert-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 2px;
+    }
+
+    .cert-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: #BAE6FD;
+    }
+
+    .cert-meta-row svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      color: #38BDF8;
+    }
+
+    /* ===== CERTS - DARK CARDS TO WHITE LIKE FIRST CARD - THEME MATCH ===== */
+    #certsGrid .cert-card.cert-dark {
+      background: var(--surface) !important;
+      color: var(--text) !important;
+      border: 1px solid var(--border) !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark h3 {
+      color: var(--text) !important;
+    }
+
+    /* PROFESSIONAL TRAINING / CERTIFICATION label - #7DD3FC white pe bahut light tha */
+    #certsGrid .cert-card.cert-dark>p {
+      color: var(--cyan) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-sub {
+      color: var(--muted) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark ul,
+    #certsGrid .cert-card.cert-dark ul li {
+      color: var(--muted) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-meta-row {
+      color: var(--muted) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-meta-row svg {
+      color: var(--cyan) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-footer {
+      border-top: 1px solid var(--border) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-footer .font-display {
+      color: var(--text) !important;
+    }
+
+    /* White button white card pe gayab ho jata, isliye gradient button */
+    #certsGrid .cert-card.cert-dark .cert-dark-btn {
+      background: var(--grad) !important;
+      color: #fff !important;
+      box-shadow: 0 10px 24px rgba(2, 132, 199, .30) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-dark-btn span {
+      background: rgba(255, 255, 255, .25) !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-dark-btn span svg {
+      stroke: #fff !important;
+    }
+
+    /* Badges - white card pe match karne ke liye */
+    #certsGrid .cert-card.cert-dark .cert-badge-training {
+      background: linear-gradient(135deg, #0284C7 0%, #0EA5E9 50%, #38BDF8 100%) !important;
+      color: #fff !important;
+      border: 1px solid transparent !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-badge-cert {
+      background: #E0F2FE !important;
+      color: #0C4A6E !important;
+      border: 1px solid #BAE6FD !important;
+      box-shadow: none !important;
+    }
+
+    #certsGrid .cert-card.cert-dark .cert-badge svg {
+      color: inherit !important;
+    }
+
+    /* ===== CERT BADGES - BOTH SAME LIGHT BLUE + CENTER FIX ===== */
+    #certsGrid .cert-card .cert-badge {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      height: 28px !important;
+      min-height: 28px !important;
+      padding: 0 12px !important;
+      border-radius: 999px !important;
+      font-size: 12px !important;
+      font-weight: 800 !important;
+      line-height: 1 !important;
+      box-sizing: border-box !important;
+      width: fit-content !important;
+      vertical-align: middle !important;
+    }
+
+    /* Dono badges ab same - Certification jaisa light blue */
+    #certsGrid .cert-card .cert-badge-training,
+    #certsGrid .cert-card .cert-badge-cert {
+      background: #E0F2FE !important;
+      color: #0C4A6E !important;
+      border: 1px solid #BAE6FD !important;
+      box-shadow: none !important;
+    }
+
+    #certsGrid .cert-card .cert-badge svg {
+      width: 14px !important;
+      height: 14px !important;
+      display: block !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* ===== VIEW LABS BUTTON - REMOVE ICON BOX ===== */
+    #certsGrid .cert-card .cert-dark-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+    }
+
+    #certsGrid .cert-card .cert-dark-btn span {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      width: auto !important;
+      height: auto !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border-radius: 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    #certsGrid .cert-card .cert-dark-btn span svg {
+      width: 16px !important;
+      height: 16px !important;
+      stroke: #fff !important;
+      display: block !important;
+    }
+
+    #certsGrid .cert-card .cert-badge-training,
+    #certsGrid .cert-card .cert-badge-cert {
+      background: #E0F2FE !important;
+      color: #0C4A6E !important;
+      border: 1px solid #BAE6FD !important;
+      box-shadow: none !important;
+    }
+
+    /* FINAL - Training badge = Certification jaisa light blue */
+    #certsGrid .cert-card.cert-dark .cert-badge-training {
+      background: #E0F2FE !important;
+      color: #0C4A6E !important;
+      border: 1px solid #BAE6FD !important;
+      box-shadow: none !important;
+    }
   </style>
 </head>
 
@@ -3196,123 +3598,166 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         <p class="mt-4 text-[16px] leading-relaxed" style="color: var(--muted);">Training + live labs + L1-ready skills
         </p>
       </div>
-      <div id="certsPills" class="flex flex-wrap gap-2 mt-10" role="tablist" aria-label="Filter credentials"><button
-          data-filter="all" class="pill active">All <span class="cert-filter-count">(1)</span></button><button
-          data-filter="training" class="pill">Training <span class="cert-filter-count">(1)</span></button></div>
+      <div id="certsPills" class="flex flex-wrap gap-2 mt-10" role="tablist" aria-label="Filter credentials">
+        <button data-filter="all" class="pill active">All <span class="cert-filter-count">(5)</span></button>
+        <button data-filter="training" class="pill">Training <span class="cert-filter-count">(1)</span></button>
+        <button data-filter="aws" class="pill">AWS <span class="cert-filter-count">(4)</span></button>
+      </div>
+
+      <!-- Certs Search + Showing (Labs jaisa) -->
+      <div id="certsSearchWrap">
+        <input id="certsSearch" type="search" class="field"
+          placeholder="Search credentials... e.g. aws, cloud, training" autocomplete="off">
+        <p id="certsShowing">Showing credentials 1-3 of 5</p>
+      </div>
+
+
+
       <div id="certsGrid">
-        <div data-category="training" class="cert-card">
-          <div class="flex items-center justify-between gap-2">
-            <p class="text-[10px] font-bold tracking-[0.14em]" style="color: var(--cyan);">PROFESSIONAL TRAINING</p>
-            <span
-              class="inline-flex items-center shrink-0 whitespace-nowrap leading-none rounded-full bg-[#0EA5E9] text-[#0C4A6E] font-black"
-              style="gap:4px; padding:4px 8px; font-size:9px; letter-spacing:0.10em;"><svg
-                xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-award">
-                <path
-                  d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
-                </path>
-                <circle cx="12" cy="8" r="6"></circle>
-              </svg>CREDENTIALS</span>
+
+        <div data-category="training" class="cert-card cert-dark">
+          <span class="cert-badge cert-badge-training"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path
+                d="M21.42 10.922a1 1 0 0 0-.019 0l-8.42 4.475a1 1 0 0 1-.89 0L3.7 10.922a1 1 0 0 1 0-1.844l8.38-4.482a1 1 0 0 1 .89 0l8.42 4.475a1 1 0 0 1 .019 1.851Z" />
+              <path d="M22 10v6" />
+              <path d="M6 12.5V16a6.3 6.3 0 0 0 12 0v-3.5" />
+            </svg>Training</span>
+          <p class="text- font-bold tracking-[0.14em]" style="color:#7DD3FC;">PROFESSIONAL TRAINING</p>
+          <h3 class="font-archivo font-extrabold text- leading-tight">Cloud Computing with AWS</h3>
+          <div class="cert-meta">
+            <p class="cert-meta-row"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                <path d="M2 22h20" />
+                <path d="M9 6h1" />
+                <path d="M14 6h1" />
+                <path d="M9 10h1" />
+                <path d="M14 10h1" />
+                <path d="M9 14h1" />
+                <path d="M14 14h1" />
+              </svg>Insys</p>
+            <p class="cert-meta-row"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>Apr 2026 to Oct 2026</p>
           </div>
-          <h3 class="font-archivo font-extrabold text-[20px] leading-tight mt-1">Cloud Computing with AWS</h3>
-          <p class="text-[13px] font-semibold">Insys — Apr 2026 to Oct 2026</p>
-          <ul class="space-y-2 text-[14px]" style="color: var(--muted);">
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>Windows Server</li>
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>Linux</li>
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>Networking</li>
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>AWS</li>
+          <ul class="space-y-2 text-">
+            <li>✓ Windows Server</li>
+            <li>✓ Linux</li>
+            <li>✓ Networking</li>
+            <li>✓ AWS</li>
           </ul>
-          <div class="mt-auto pt-4 cert-footer" style="border-top: 1px solid var(--border);">
-            <div class="font-display text-[28px] leading-none">6 <span class="text-[16px]">Months</span></div>
-            <p class="text-[12px] mt-1" style="color: var(--muted);">Focused, hands-on training • Built 4 live labs (see
-              Labs).</p>
-            <button class="mt-4 w-full rounded-full text-white font-semibold inline-flex items-center justify-center"
-              style="height:44px; padding:0 20px; font-size:14px; gap:8px;">View Labs <svg
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-arrow-right">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg></button>
+          <div class="cert-footer">
+            <div class="font-display text-">6 Months</div>
+            <button class="cert-dark-btn mt-4" onclick="scrollToSection('labs')"><svg xmlns="http://www.w3.org/2000/svg"
+                width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; display:block;">
+                <path
+                  d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2" />
+                <path d="M8.5 2h7" />
+                <path d="M7 16h10" />
+              </svg>View Labs</button>
           </div>
         </div>
 
-<!-- ADD ANOTHER CARD HERE -->
-         <!-- <div data-category="training" class="cert-card">
-          <div class="flex items-center justify-between gap-2">
-            <p class="text-[10px] font-bold tracking-[0.14em]" style="color: var(--cyan);">PROFESSIONAL TRAINING</p>
-            <span
-              class="inline-flex items-center shrink-0 whitespace-nowrap leading-none rounded-full bg-[#0EA5E9] text-[#0C4A6E] font-black"
-              style="gap:4px; padding:4px 8px; font-size:9px; letter-spacing:0.10em;"><svg
-                xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-award">
+        <div data-category="AWS" class="cert-card cert-dark">
+          <div>
+            <span class="cert-badge cert-badge-cert"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path
                   d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
                 </path>
                 <circle cx="12" cy="8" r="6"></circle>
-              </svg>CREDENTIALS</span>
+              </svg>Training</span>
           </div>
-          <h3 class="font-archivo font-extrabold text-[20px] leading-tight mt-1">Cloud Computing with AWS</h3>
-          <p class="text-[13px] font-semibold">Insys — Apr 2026 to Oct 2026</p>
-          <ul class="space-y-2 text-[14px]" style="color: var(--muted);">
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>Windows Server</li>
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>Linux</li>
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>Networking</li>
-            <li class="flex gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-check text-[#059669] shrink-0 mt-0.5">
-                <path d="M20 6 9 17l-5-5"></path>
-              </svg>AWS</li>
+          <p class="text- font-bold tracking-[0.14em]" style="color:#7DD3FC;">TRAINING BADGE</p>
+          <h3 class="font-archivo font-extrabold text- leading-tight">AWS Educate - Getting Started with Storage</h3>
+          <div class="cert-meta">
+            <p class="cert-meta-row"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                <path d="M2 22h20" />
+                <path d="M9 6h1" />
+                <path d="M14 6h1" />
+                <path d="M9 10h1" />
+                <path d="M14 10h1" />
+                <path d="M9 14h1" />
+                <path d="M14 14h1" />
+              </svg>Amazon Web Services Training and Certification</p>
+            <p class="cert-meta-row"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>Issued Mar 31, 2024</p>
+          </div>
+          <ul class="space-y-2 text-">
+            <li>✓ Amazon S3 Basics</li>
+            <li>✓ Storage Concepts</li>
+            <li>✓ EBS &amp; EFS Overview</li>
           </ul>
-          <div class="mt-auto pt-4 cert-footer" style="border-top: 1px solid var(--border);">
-            <div class="font-display text-[28px] leading-none">6 <span class="text-[16px]">Months</span></div>
-            <p class="text-[12px] mt-1" style="color: var(--muted);">Focused, hands-on training • Built 4 live labs (see
-              Labs).</p>
-            <button class="mt-4 w-full rounded-full text-white font-semibold inline-flex items-center justify-center"
-              style="height:44px; padding:0 20px; font-size:14px; gap:8px;">View Labs <svg
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-arrow-right">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg></button>
+          <div class="cert-footer">
+            <div class="font-display">Does not expire</div>
+            <a href="https://www.credly.com/badges/ed2782db-8d08-4202-98f6-cb0b2c606b35/public_url" target="_blank"
+              rel="noopener" class="cert-dark-btn mt-4">↗ View Badge</a>
           </div>
+        </div>
+
+        <!-- <div data-category="aws" class="cert-card cert-dark">
+          <div>
+            <span class="cert-badge cert-badge-cert"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526">
+                </path>
+                <circle cx="12" cy="8" r="6"></circle>
+              </svg>Certification</span>
+          </div>
+          <p class="text- font-bold tracking-[0.14em]" style="color:#7DD3FC;">CERTIFICATION</p>
+          <h3 class="font-archivo font-extrabold text- leading-tight">AWS Certified Cloud Practitioner</h3>
+          <div class="cert-meta">
+            <p class="cert-meta-row"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
+                <path d="M2 22h20" />
+                <path d="M9 6h1" />
+                <path d="M14 6h1" />
+                <path d="M9 10h1" />
+                <path d="M14 10h1" />
+                <path d="M9 14h1" />
+                <path d="M14 14h1" />
+              </svg>Amazon Web Services</p>
+            <p class="cert-meta-row"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>Issued 2026</p>
+          </div>
+          <ul class="space-y-2 text-">
+            <li>✓ Cloud Concepts</li>
+            <li>✓ Security &amp; Compliance</li>
+            <li>✓ Billing &amp; Pricing</li>
+          </ul>
+
+
+          <div class="cert-footer">
+  <div class="font-display">Valid till 2028</div>
+  <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential" target="_blank" rel="noopener" class="cert-dark-btn mt-4">↗ Verify Credential</a>
+</div>
         </div> -->
-
-
-
-
       </div>
+      <div id="certsPagination">
+        <button id="certsPrev" class="pill" type="button">← Prev</button>
+        <span id="certsPageInfo">Page 1 of 2</span>
+        <button id="certsNext" class="pill" type="button">Next →</button>
+      </div>
+      <p id="certsNoResults">No credentials found.</p>
+
+
       <p id="certsEmpty" hidden class="mt-8 text-[15px]" style="color: var(--muted);">No credentials in this filter yet.
       </p>
     </section>
@@ -3334,10 +3779,21 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               <path d="M7 17 17 7"></path>
             </svg></button>
         </div>
-        <div id="labsPills" class="flex flex-wrap gap-2 mt-10"><button data-filter="All"
-            class="pill active">All</button><button data-filter="Windows" class="pill ">Windows</button><button
-            data-filter="Linux" class="pill ">Linux</button><button data-filter="Networking"
-            class="pill ">Networking</button><button data-filter="AWS" class="pill ">AWS</button></div>
+
+        <div id="labsPills" class="flex flex-wrap gap-2 mt-10">
+          <button data-filter="All" class="pill active">All <span class="lab-count"></span></button>
+          <button data-filter="Windows" class="pill">Windows <span class="lab-count"></span></button>
+          <button data-filter="Linux" class="pill">Linux <span class="lab-count"></span></button>
+          <button data-filter="Networking" class="pill">Networking <span class="lab-count"></span></button>
+          <button data-filter="AWS" class="pill">AWS <span class="lab-count"></span></button>
+        </div>
+        <!-- Labs Search + Showing (Labs only) -->
+        <div id="labsSearchWrap">
+          <input id="labsSearch" type="search" class="field" placeholder="Search labs... e.g. vpc, aws, linux"
+            autocomplete="off">
+          <p id="labsShowing">Showing 1-3 of 4</p>
+        </div>
+
         <div id="labsGrid" class="grid md:grid-cols-2 gap-6 mt-8">
           <article data-cat="Windows" class="rounded-[24px] p-7 md:p-8 transition hover:-translate-y-1"
             style="background: var(--surface-2); border: 1px solid var(--border); box-shadow: var(--shadow);">
@@ -3371,6 +3827,12 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                 <path d="m9 18 6-6-6-6"></path>
               </svg></button>
           </article>
+
+          <!-- + FILTER MORE  -->
+          <!-- ADD SAME WINDOWS CARD ARTICLE HERE TOO -->
+          <!-- + SHOW MORE  -->
+          <!-- ADD SAME WINDOWS CARD ARTICLE HERE TOO -->
+
           <article data-cat="Networking" class="rounded-[24px] p-7 md:p-8 transition hover:-translate-y-1"
             style="background: var(--surface-2); border: 1px solid var(--border); box-shadow: var(--shadow);">
             <div class="flex items-start justify-between">
@@ -3466,6 +3928,17 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               </svg></button>
           </article>
         </div>
+
+
+        <!-- Labs Pagination (Labs only, limit 3 per page) -->
+        <div id="labsPagination">
+          <button id="labsPrev" class="pill" type="button">← Prev</button>
+          <span id="labsPageInfo">Page 1 of 2</span>
+          <button id="labsNext" class="pill" type="button">Next →</button>
+        </div>
+        <p id="labsNoResults">No labs found.</p>
+
+
       </div>
     </section>
     <section id="journey" class="max-w-[1120px] mx-auto px-5 md:px-8 py-[96px]">
@@ -3606,12 +4079,13 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         <form id="contactForm" class="rounded-[24px] p-6 md:p-8"
           style="background: var(--surface-2); border: 1px solid var(--border); box-shadow: var(--shadow);">
           <h3 class="font-archivo font-extrabold text-[20px]">Send a message</h3><label
-            class="block mt-6 text-[13px] font-semibold">Name<input id="formName" class="field mt-2"
-              placeholder="Your name" value=""></label><label class="block mt-4 text-[13px] font-semibold">Email<input
-              id="formEmail" class="field mt-2" type="email" placeholder="you@example.com" value=""></label><label
-            class="block mt-4 text-[13px] font-semibold">Message<textarea id="formMessage"
-              class="field mt-2 min-h-[120px] resize-y"
-              placeholder="Tell me about the L1 role or lab…"></textarea></label><button id="sendBtn" type="submit"
+            class="block mt-6 text-[13px] font-semibold">Name<input id="formName" name="name" class="field mt-2"
+              placeholder="Your name" value="" required></label><label
+            class="block mt-4 text-[13px] font-semibold">Email<input id="formEmail" name="email" class="field mt-2"
+              type="email" placeholder="you@example.com" value="" required></label><label
+            class="block mt-4 text-[13px] font-semibold">Message<textarea id="formMessage" name="message"
+              class="field mt-2 min-h-[120px] resize-y" placeholder="Tell me about the L1 role or lab…"
+              required></textarea></label><button id="sendBtn" type="submit"
             class="w-full mt-6 h-[52px] rounded-full bg-[#0C4A6E] text-white font-bold disabled:opacity-60"
             style="display:flex; align-items:center; justify-content:center; gap:8px;"><svg
               xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
@@ -3621,15 +4095,14 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               <path d="M22 2 11 13"></path>
             </svg>Send Message</button>
           <div id="formStatus"></div>
-          <p class="mt-4 text-[12px] text-left" style="color: var(--muted);">Preview only — no message is sent from
-            this page.</p>
+
         </form>
       </div>
     </section>
     <footer class="max-w-[1120px] mx-auto px-5 md:px-8 py-5 text-left" style="border-top:1px solid var(--border);">
       <div class="flex flex-col sm:flex-row sm:items-center justify-start gap-3 flex-wrap">
         <div>
-          <p class="font-display text-[14px] leading-tight">© 2026 Dharmaraj Wadeyar | Built for Uptime</p>
+          <p class="font-display text-[14px] leading-tight">© 2026 Dharmaraj Wadeyar • Built for Uptime</p>
           <p id="lastModified" class="mt-1 text-[12px]" style="color: var(--muted);">• Last Modified: December 31, 1969
           </p>
         </div>
@@ -3639,6 +4112,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       </div>
     </footer>
   </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <script>
     /* ============================================================
        Dharmaraj Wadeyar — Light Blue Gradient | L1 Support Engineer
@@ -3649,13 +4124,13 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
     // ---------- Data (same as original) ----------
     const NAV = [
-      {label: "HOME", id: "home"},
-      {label: "ABOUT", id: "about"},
-      {label: "TECH", id: "tech"},
-      {label: "CERTS", id: "certs"},
-      {label: "LABS", id: "labs"},
-      {label: "JOURNEY", id: "journey"},
-      {label: "CONNECT", id: "connect"}
+      { label: "HOME", id: "home" },
+      { label: "ABOUT", id: "about" },
+      { label: "TECH", id: "tech" },
+      { label: "CERTS", id: "certs" },
+      { label: "LABS", id: "labs" },
+      { label: "JOURNEY", id: "journey" },
+      { label: "CONNECT", id: "connect" }
     ];
 
 
@@ -3669,7 +4144,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     // ---------- Helpers ----------
     function scrollToSection(id) {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({behavior: "smooth"});
+      if (el) el.scrollIntoView({ behavior: "smooth" });
     }
 
     // ---------- Theme (dark / light) ----------
@@ -3723,44 +4198,44 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     // ---------- CLOUD STACK Globe - copied verbatim from DharmarajW_Main_NIVEA.html ----------
     const logos = [
       // Windows Server - RESUME MATCHED
-      {n: 'Windows Server Administration', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg', cat: 'windows'},
-      {n: 'AD DS & Domain Controller', u: 'https://img.icons8.com/color/48/domain.png', cat: 'windows'},
-      {n: 'AD User & Group Management', u: 'https://img.icons8.com/color/48/organization.png', cat: 'windows'},
-      {n: 'User & Group Management', u: 'https://img.icons8.com/color/48/user-group-man-woman.png', cat: 'windows'},
-      {n: 'Files & Folder Permissions', u: 'https://img.icons8.com/color/48/folder-invoices--v1.png', cat: 'windows'}, // FIXED - was folder.png
-      {n: 'Group Policy (GPO)', u: 'https://img.icons8.com/color/48/group-task.png', cat: 'windows'},
-      {n: 'Disk Management (RAID1)', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'windows'},
-      {n: 'IIS & FTP Server', u: 'https://img.icons8.com/color/48/server.png', cat: 'windows'}, // FIXED - was file-transfer.png
+      { n: 'Windows Server Administration', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows8/windows8-original.svg', cat: 'windows' },
+      { n: 'AD DS & Domain Controller', u: 'https://img.icons8.com/color/48/domain.png', cat: 'windows' },
+      { n: 'AD User & Group Management', u: 'https://img.icons8.com/color/48/organization.png', cat: 'windows' },
+      { n: 'User & Group Management', u: 'https://img.icons8.com/color/48/user-group-man-woman.png', cat: 'windows' },
+      { n: 'Files & Folder Permissions', u: 'https://img.icons8.com/color/48/folder-invoices--v1.png', cat: 'windows' }, // FIXED - was folder.png
+      { n: 'Group Policy (GPO)', u: 'https://img.icons8.com/color/48/group-task.png', cat: 'windows' },
+      { n: 'Disk Management (RAID1)', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'windows' },
+      { n: 'IIS & FTP Server', u: 'https://img.icons8.com/color/48/server.png', cat: 'windows' }, // FIXED - was file-transfer.png
 
       // Linux Administration - RESUME MATCHED
-      {n: 'Sudo & Process Management', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg', cat: 'linux'},
-      {n: 'Linux User & Group Management', u: 'https://img.icons8.com/color/48/admin-settings-male.png', cat: 'linux'},
-      {n: 'File Permissions & Sudo', u: 'https://img.icons8.com/color/48/privacy.png', cat: 'linux'},
-      {n: 'Static IP (NIC Config)', u: 'https://img.icons8.com/color/48/network-card.png', cat: 'linux'},
-      {n: 'YUM Package Management', u: 'https://img.icons8.com/color/48/package.png', cat: 'linux'},
-      {n: 'Hostname Resolution', u: 'https://img.icons8.com/color/48/dns.png', cat: 'linux'},
-      {n: 'Disk Partitioning & Swap', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'linux'}, // FIXED - was hard-disk.png
-      {n: 'Apache Web Server', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg', cat: 'linux'},
+      { n: 'Sudo & Process Management', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg', cat: 'linux' },
+      { n: 'Linux User & Group Management', u: 'https://img.icons8.com/color/48/admin-settings-male.png', cat: 'linux' },
+      { n: 'File Permissions & Sudo', u: 'https://img.icons8.com/color/48/privacy.png', cat: 'linux' },
+      { n: 'Static IP (NIC Config)', u: 'https://img.icons8.com/color/48/network-card.png', cat: 'linux' },
+      { n: 'YUM Package Management', u: 'https://img.icons8.com/color/48/package.png', cat: 'linux' },
+      { n: 'Hostname Resolution', u: 'https://img.icons8.com/color/48/dns.png', cat: 'linux' },
+      { n: 'Disk Partitioning & Swap', u: 'https://img.icons8.com/color/48/hdd.png', cat: 'linux' }, // FIXED - was hard-disk.png
+      { n: 'Apache Web Server', u: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apache/apache-original.svg', cat: 'linux' },
 
       // Networking Concepts - RESUME MATCHED
-      {n: 'TCP/IP Protocol', u: 'https://img.icons8.com/color/48/network-cable.png', cat: 'networking'},
-      {n: 'IPv4 Addressing', u: 'https://img.icons8.com/color/48/ip-address.png', cat: 'networking'},
-      {n: 'Subnetting', u: 'https://img.icons8.com/color/48/network.png', cat: 'networking'}, // FIXED - was subnet.png
-      {n: 'Static Routing', u: 'https://img.icons8.com/color/48/router.png', cat: 'networking'},
-      {n: 'Routing Tables', u: 'https://img.icons8.com/color/48/route.png', cat: 'networking'},
-      {n: 'Cisco IOS Basics', u: 'https://img.icons8.com/color/48/cisco-router.png', cat: 'networking'},
-      {n: 'DHCP Server', u: 'https://img.icons8.com/color/48/server--v1.png', cat: 'networking'},
-      {n: 'Network Troubleshooting', u: 'https://img.icons8.com/color/48/error--v1.png', cat: 'networking'}, // FIXED - was connected-no.png
+      { n: 'TCP/IP Protocol', u: 'https://img.icons8.com/color/48/network-cable.png', cat: 'networking' },
+      { n: 'IPv4 Addressing', u: 'https://img.icons8.com/color/48/ip-address.png', cat: 'networking' },
+      { n: 'Subnetting', u: 'https://img.icons8.com/color/48/network.png', cat: 'networking' }, // FIXED - was subnet.png
+      { n: 'Static Routing', u: 'https://img.icons8.com/color/48/router.png', cat: 'networking' },
+      { n: 'Routing Tables', u: 'https://img.icons8.com/color/48/route.png', cat: 'networking' },
+      { n: 'Cisco IOS Basics', u: 'https://img.icons8.com/color/48/cisco-router.png', cat: 'networking' },
+      { n: 'DHCP Server', u: 'https://img.icons8.com/color/48/server--v1.png', cat: 'networking' },
+      { n: 'Network Troubleshooting', u: 'https://img.icons8.com/color/48/error--v1.png', cat: 'networking' }, // FIXED - was connected-no.png
 
       // AWS Cloud - RESUME MATCHED
-      {n: 'EC2 Instances', u: 'https://icon.icepanel.io/AWS/svg/Compute/EC2.svg', cat: 'aws'},
-      {n: 'EBS Storage & Snapshot', u: 'https://icon.icepanel.io/AWS/svg/Storage/Elastic-Block-Store.svg', cat: 'aws'},
-      {n: 'VPC (Public/Private Subnets, Route Tables)', u: 'https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Virtual-Private-Cloud.svg', cat: 'aws'},
-      {n: 'Internet Gateway (IGW)', u: 'https://img.icons8.com/color/48/internet--v1.png', cat: 'aws'}, // FIXED - was VPC-Internet-Gateway.svg
-      {n: 'NAT Gateway', u: 'https://img.icons8.com/color/48/switch.png', cat: 'aws'},
-      {n: 'CloudFormation (IaC)', u: 'https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg', cat: 'aws'},
-      {n: 'Auto Scaling Group', u: 'https://img.icons8.com/color/48/cloud-sync.png', cat: 'aws'}, // FIXED - valid 48 path
-      {n: 'RDS MySQL & Security Groups', u: 'https://icon.icepanel.io/AWS/svg/Database/RDS.svg', cat: 'aws'},
+      { n: 'EC2 Instances', u: 'https://icon.icepanel.io/AWS/svg/Compute/EC2.svg', cat: 'aws' },
+      { n: 'EBS Storage & Snapshot', u: 'https://icon.icepanel.io/AWS/svg/Storage/Elastic-Block-Store.svg', cat: 'aws' },
+      { n: 'VPC (Public/Private Subnets, Route Tables)', u: 'https://icon.icepanel.io/AWS/svg/Networking-Content-Delivery/Virtual-Private-Cloud.svg', cat: 'aws' },
+      { n: 'Internet Gateway (IGW)', u: 'https://img.icons8.com/color/48/internet--v1.png', cat: 'aws' }, // FIXED - was VPC-Internet-Gateway.svg
+      { n: 'NAT Gateway', u: 'https://img.icons8.com/color/48/switch.png', cat: 'aws' },
+      { n: 'CloudFormation (IaC)', u: 'https://icon.icepanel.io/AWS/svg/Management-Governance/CloudFormation.svg', cat: 'aws' },
+      { n: 'Auto Scaling Group', u: 'https://img.icons8.com/color/48/cloud-sync.png', cat: 'aws' }, // FIXED - valid 48 path
+      { n: 'RDS MySQL & Security Groups', u: 'https://icon.icepanel.io/AWS/svg/Database/RDS.svg', cat: 'aws' },
     ];
 
     const globe = document.getElementById('globe');
@@ -3782,53 +4257,127 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         el.className = 'logo-item';
         el.style.setProperty('--x', x + 'px'); el.style.setProperty('--y', y + 'px'); el.style.setProperty('--z', z + 'px');
         el.innerHTML = `<img src="${item.u}" alt="${item.n}">`;
-        el.addEventListener('mouseenter', () => {globe.classList.add('paused'); tip.textContent = item.n; tip.style.opacity = '1';});
-        el.addEventListener('mousemove', (e) => {tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px';});
-        el.addEventListener('mouseleave', () => {globe.classList.remove('paused'); tip.style.opacity = '0';});
+        el.addEventListener('mouseenter', () => { globe.classList.add('paused'); tip.textContent = item.n; tip.style.opacity = '1'; });
+        el.addEventListener('mousemove', (e) => { tip.style.left = e.clientX + 'px'; tip.style.top = e.clientY + 'px'; });
+        el.addEventListener('mouseleave', () => { globe.classList.remove('paused'); tip.style.opacity = '0'; });
         globe.appendChild(el);
       });
     }
     buildGlobe('all');
     document.querySelectorAll('#tech [data-filter]').forEach(p => {
-      p.addEventListener('click', () => {document.querySelectorAll('.tech-pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); buildGlobe(p.dataset.filter);});
+      p.addEventListener('click', () => { document.querySelectorAll('.tech-pill').forEach(x => x.classList.remove('active')); p.classList.add('active'); buildGlobe(p.dataset.filter); });
     });
 
-    // ---------- Labs filter ----------
-    const labsPills = document.querySelectorAll("#labsPills button[data-filter]");
-    const labsArticles = document.querySelectorAll("#labsGrid article[data-cat]");
-    const labsGrid = document.getElementById("labsGrid");
+    // ---------- Labs filter + Counter + Show More (3 only) ----------
+    // ---------- Labs filter + Counter + Search + Pagination (Labs only, limit 3) ----------
+    labsFilter = "All";
+    var LABS_PAGE_SIZE = 3;
+    var labsPage = 1;
+    var labsSearch = "";
+
+    function updateLabsCounts() {
+      var counts = { All: 0, Windows: 0, Linux: 0, Networking: 0, AWS: 0 };
+      document.querySelectorAll("#labsGrid article").forEach(function (card) {
+        var cat = card.getAttribute("data-cat");
+        if (counts[cat] !== undefined) counts[cat]++;
+        counts.All++;
+      });
+      document.querySelectorAll("#labsPills button").forEach(function (btn) {
+        var f = btn.getAttribute("data-filter");
+        var span = btn.querySelector(".lab-count");
+        if (span) span.textContent = "(" + (counts[f] || 0) + ")";
+      });
+    }
+
+    function getLabsFiltered() {
+      var q = labsSearch.toLowerCase().trim();
+      var all = Array.prototype.slice.call(document.querySelectorAll("#labsGrid article"));
+      return all.filter(function (card) {
+        var cat = card.getAttribute("data-cat") || "";
+        var byFilter = (labsFilter === "All" || cat === labsFilter);
+        if (!byFilter) return false;
+        if (!q) return true;
+        var text = (card.textContent || "") + " " + cat;
+        return text.toLowerCase().indexOf(q) !== -1;
+      });
+    }
+
+    function renderLabs() {
+      var filtered = getLabsFiltered();
+      var total = filtered.length;
+      var totalPages = Math.max(1, Math.ceil(total / LABS_PAGE_SIZE));
+      if (labsPage > totalPages) labsPage = totalPages;
+      if (labsPage < 1) labsPage = 1;
+      var start = (labsPage - 1) * LABS_PAGE_SIZE;
+      var end = Math.min(start + LABS_PAGE_SIZE, total);
+
+      document.querySelectorAll("#labsGrid article").forEach(function (c) { c.style.display = "none"; });
+      filtered.slice(start, end).forEach(function (c) { c.style.display = ""; });
+
+      var showing = document.getElementById("labsShowing");
+      if (showing) {
+        if (total === 0) showing.textContent = "Showing 0 of 0";
+        else showing.textContent = "Showing " + (start + 1) + "-" + end + " of " + total;
+      }
+
+      var prevBtn = document.getElementById("labsPrev");
+      var nextBtn = document.getElementById("labsNext");
+      var pageInfo = document.getElementById("labsPageInfo");
+      var pag = document.getElementById("labsPagination");
+      if (pageInfo) pageInfo.textContent = "Page " + labsPage + " of " + totalPages;
+      if (prevBtn) prevBtn.disabled = (labsPage <= 1);
+      if (nextBtn) nextBtn.disabled = (labsPage >= totalPages);
+      if (pag) pag.style.display = (total === 0) ? "none" : "flex";
+
+      var noEl = document.getElementById("labsNoResults");
+      if (noEl) {
+        if (total === 0) {
+          noEl.style.display = "block";
+          if (labsSearch.trim()) noEl.textContent = 'No labs found for "' + labsSearch.trim() + '". Try another keyword like vpc, aws or linux.';
+          else noEl.textContent = "No labs in this filter.";
+        } else {
+          noEl.style.display = "none";
+        }
+      }
+      var oldEmpty = document.getElementById("labsEmpty");
+      if (oldEmpty) oldEmpty.remove();
+    }
 
     function setLabsFilter(filter) {
       labsFilter = filter;
-      labsPills.forEach(function (btn) {
-        const active = btn.getAttribute("data-filter") === filter;
+      labsPage = 1;
+      document.querySelectorAll("#labsPills button").forEach(function (btn) {
+        var active = btn.getAttribute("data-filter") === filter;
         btn.className = "pill " + (active ? "active" : "");
       });
-      let visible = 0;
-      labsArticles.forEach(function (art) {
-        const show = filter === "All" || art.getAttribute("data-cat") === filter;
-        art.style.display = show ? "" : "none";
-        if (show) visible++;
-      });
-      let empty = document.getElementById("labsEmpty");
-      if (visible === 0) {
-        if (!empty && labsGrid) {
-          empty = document.createElement("p");
-          empty.id = "labsEmpty";
-          empty.className = "mt-8";
-          empty.style.color = "var(--muted)";
-          empty.textContent = "No labs in this filter.";
-          labsGrid.appendChild(empty);
-        }
-      } else if (empty) {
-        empty.remove();
-      }
+      renderLabs();
     }
-    labsPills.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        setLabsFilter(btn.getAttribute("data-filter"));
-      });
+
+    document.querySelectorAll("#labsPills button").forEach(function (btn) {
+      btn.addEventListener("click", function () { setLabsFilter(btn.getAttribute("data-filter")); });
     });
+
+    var labsSearchInput = document.getElementById("labsSearch");
+    if (labsSearchInput) {
+      labsSearchInput.addEventListener("input", function () {
+        labsSearch = labsSearchInput.value;
+        labsPage = 1;
+        renderLabs();
+      });
+    }
+
+    var labsPrevBtn = document.getElementById("labsPrev");
+    if (labsPrevBtn) labsPrevBtn.addEventListener("click", function () { if (labsPage > 1) { labsPage--; renderLabs(); } });
+    var labsNextBtn = document.getElementById("labsNext");
+    if (labsNextBtn) labsNextBtn.addEventListener("click", function () {
+      var totalPages = Math.max(1, Math.ceil(getLabsFiltered().length / LABS_PAGE_SIZE));
+      if (labsPage < totalPages) { labsPage++; renderLabs(); }
+    });
+
+    updateLabsCounts();
+    setLabsFilter("All");
+    // ---------- End Labs Pagination + Search ----------
+
 
     // ---------- Smooth scroll for nav + buttons ----------
     document.querySelectorAll('header a[href^="#"], nav a.nav-link').forEach(function (a) {
@@ -3843,63 +4392,57 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     document.querySelectorAll("button").forEach(function (btn) {
       const txt = (btn.innerText || "").trim();
       if (txt === "View Live Labs") {
-        btn.addEventListener("click", function () {scrollToSection("labs");});
+        btn.addEventListener("click", function () { scrollToSection("labs"); });
       } else if (txt === "View Resume") {
-        btn.addEventListener("click", function () {scrollToSection("journey");});
+        btn.addEventListener("click", function () { scrollToSection("journey"); });
       } else if (txt === "View Labs") {
-        btn.addEventListener("click", function () {scrollToSection("labs");});
+        btn.addEventListener("click", function () { scrollToSection("labs"); });
       } else if (txt.indexOf("MORE ON GITHUB") !== -1) {
-        btn.addEventListener("click", function () {scrollToSection("connect");});
+        btn.addEventListener("click", function () { scrollToSection("connect"); });
       } else if (txt.indexOf("View Details") !== -1) {
         // FIX: Labs View Details already has onclick="openLabModal()" — must NOT scroll to Lets Talk (connect).
         // Skip any button inside #labs or with openLabModal, otherwise modal opens + bg jumps to Lets Talk.
         if (btn.closest("#labs") || (btn.getAttribute("onclick") || "").indexOf("openLabModal") !== -1) {
           // do nothing — modal handles it, stay at Labs
         } else {
-          btn.addEventListener("click", function () {scrollToSection("connect");});
+          btn.addEventListener("click", function () { scrollToSection("connect"); });
         }
       }
     });
 
     // ---------- Contact form ----------
-    const contactForm = document.getElementById("contactForm");
-    const formName = document.getElementById("formName");
-    const formEmail = document.getElementById("formEmail");
-    const formMessage = document.getElementById("formMessage");
-    const sendBtn = document.getElementById("sendBtn");
-    const formStatus = document.getElementById("formStatus");
 
-    if (contactForm) {
-      contactForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const name = formName ? formName.value.trim() : "";
-        const email = formEmail ? formEmail.value.trim() : "";
-        const message = formMessage ? formMessage.value.trim() : "";
-        if (!name || !email || !message) {
-          if (formStatus) {
-            formStatus.innerHTML = '<p class="mt-4 text-[14px] font-semibold text-red-600">Couldn\'t send message. Please try again.</p>';
-          }
-          return;
+    var SHEET_URL = "https://script.google.com/macros/s/AKfycbz7zKIC4gce27Yg0XI3A0DSUBBk0ht0j_CMLhB5h6HI0YXqCRlFF5umbj87vsSJZPdW/exec";
+    $("#contactForm").on("submit", function (e) {
+      e.preventDefault();
+      // var name = $("#formName").val().trim();
+      // var email = $("#formEmail").val().trim();
+      // var msg = $("#formMessage").val().trim();
+
+      // if (!name || !email || !msg) {
+      //   $("#formStatus").text("All 3 fields are required - Name, Email and Message.").css({ color: "#d32f2f", display: "block" });
+      //   return;
+      // }
+      var $btn = $(this).find('button');
+      var $status = $("#formStatus");
+      $btn.prop("disabled", true).html("Sending...");
+      $.ajax({
+        url: SHEET_URL,
+        method: "POST",
+        data: $(this).serialize(),
+        success: function () {
+          $status.text("✓ Message delivered!").css({ color: "green", display: "block" });
+          $("#contactForm")[0].reset();
+          $btn.prop("disabled", false).html('<img src="https://img.icons8.com/fluency/48/paper-plane.png" style="width:18px;height:18px;filter:brightness(0) invert(1)"> Send Message');
+          setTimeout(() => $("#formStatus").fadeOut(), 3000);
+        },
+        error: function () {
+          $status.text("Couldn't send message. Please try again.").css({ color: "#d32f2f", display: "block" });
+          $btn.prop("disabled", false).html('<img src="https://img.icons8.com/fluency/48/paper-plane.png" style="width:18px;height:18px;filter:brightness(0) invert(1)"> Send Message');
+          setTimeout(() => $("#formStatus").fadeOut(), 3000);
         }
-        if (sendBtn) {
-          sendBtn.disabled = true;
-          sendBtn.textContent = "Logging ticket\u2026";
-        }
-        if (formStatus) formStatus.innerHTML = "";
-        setTimeout(function () {
-          if (formStatus) {
-            formStatus.innerHTML = '<p class="mt-4 text-[14px] font-semibold text-[#059669]">\u2713 Ticket Logged! I\'ll get back to you soon.</p>';
-          }
-          if (formName) formName.value = "";
-          if (formEmail) formEmail.value = "";
-          if (formMessage) formMessage.value = "";
-          if (sendBtn) {
-            sendBtn.disabled = false;
-            sendBtn.textContent = "Send Message";
-          }
-        }, 600);
       });
-    }
+    });
 
     // ---------- Check for Update ----------
     const checkBtn = document.getElementById("checkUpdateBtn");
@@ -3919,7 +4462,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     const lastModEl = document.getElementById("lastModified");
     if (lastModEl && typeof document !== "undefined" && document.lastModified) {
       try {
-        const d = new Date(document.lastModified).toLocaleDateString(undefined, {year: "numeric", month: "long", day: "numeric"});
+        const d = new Date(document.lastModified).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
         lastModEl.textContent = "\u2022 Last Modified: " + d;
       } catch (err) { }
     }
@@ -4097,48 +4640,6 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     });
     // ---------- End Labs Modal ----------
 
-
-    // ---------- Certs filter — All / Training, counts dynamic from .cert-card ----------
-    (function () {
-      var pills = document.querySelectorAll('#certsPills button[data-filter]');
-      var grid = document.getElementById('certsGrid');
-      var empty = document.getElementById('certsEmpty');
-      if (!pills.length || !grid) return;
-      function updateCertCounts() {
-        var cards = grid.querySelectorAll('.cert-card');
-        var counts = {all: cards.length};
-        cards.forEach(function (c) {
-          var cat = (c.getAttribute('data-category') || '').toLowerCase();
-          if (!cat) return;
-          counts[cat] = (counts[cat] || 0) + 1;
-        });
-        pills.forEach(function (p) {
-          var f = p.getAttribute('data-filter');
-          var span = p.querySelector('.cert-filter-count');
-          if (span) span.textContent = '(' + (counts[f] || 0) + ')';
-        });
-      }
-      function setCertFilter(filter) {
-        pills.forEach(function (btn) {
-          var active = btn.getAttribute('data-filter') === filter;
-          btn.classList.toggle('active', active);
-        });
-        var visible = 0;
-        grid.querySelectorAll('.cert-card').forEach(function (card) {
-          var show = filter === 'all' || (card.getAttribute('data-category') || '').toLowerCase() === filter;
-          card.style.display = show ? '' : 'none';
-          if (show) visible++;
-        });
-        if (empty) empty.hidden = visible !== 0;
-      }
-      pills.forEach(function (btn) {
-        btn.addEventListener('click', function () {setCertFilter(btn.getAttribute('data-filter'));});
-      });
-      updateCertCounts();
-      setCertFilter('all');
-    })();
-    // ---------- End Certs filter ----------
-
   </script>
 
   <!-- LABS MODAL — same structure as Main -->
@@ -4172,7 +4673,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       var HOLD_MS = 320;        // how long dot stays white while line passes over it
       var start = performance.now();
       var dotY = [];            // dot centre Y relative to line top
-      var hitAt = dots.map(function () {return -1;}); // last cycle when this dot was hit
+      var hitAt = dots.map(function () { return -1; }); // last cycle when this dot was hit
       var prevTip = null;
       var lastCycle = -1;
 
@@ -4201,7 +4702,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
         // New cycle started -> allow all dots to be hit again
         var cycle = Math.floor((now - start) / DURATION);
-        if (cycle !== lastCycle) {lastCycle = cycle; prevTip = null;}
+        if (cycle !== lastCycle) { lastCycle = cycle; prevTip = null; }
 
         // Tip moves upward, so Y decreases. Hit when tip crosses dot centre from below.
         if (prevTip !== null) {
@@ -4225,46 +4726,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       requestAnimationFrame(frame);
     })();
 
-    // ---------- Certs filter — All / Training, counts dynamic from .cert-card ----------
-    (function () {
-      var pills = document.querySelectorAll('#certsPills button[data-filter]');
-      var grid = document.getElementById('certsGrid');
-      var empty = document.getElementById('certsEmpty');
-      if (!pills.length || !grid) return;
-      function updateCertCounts() {
-        var cards = grid.querySelectorAll('.cert-card');
-        var counts = {all: cards.length};
-        cards.forEach(function (c) {
-          var cat = (c.getAttribute('data-category') || '').toLowerCase();
-          if (!cat) return;
-          counts[cat] = (counts[cat] || 0) + 1;
-        });
-        pills.forEach(function (p) {
-          var f = p.getAttribute('data-filter');
-          var span = p.querySelector('.cert-filter-count');
-          if (span) span.textContent = '(' + (counts[f] || 0) + ')';
-        });
-      }
-      function setCertFilter(filter) {
-        pills.forEach(function (btn) {
-          var active = btn.getAttribute('data-filter') === filter;
-          btn.classList.toggle('active', active);
-        });
-        var visible = 0;
-        grid.querySelectorAll('.cert-card').forEach(function (card) {
-          var show = filter === 'all' || (card.getAttribute('data-category') || '').toLowerCase() === filter;
-          card.style.display = show ? '' : 'none';
-          if (show) visible++;
-        });
-        if (empty) empty.hidden = visible !== 0;
-      }
-      pills.forEach(function (btn) {
-        btn.addEventListener('click', function () {setCertFilter(btn.getAttribute('data-filter'));});
-      });
-      updateCertCounts();
-      setCertFilter('all');
-    })();
-    // ---------- End Certs filter ----------
+
 
   </script>
 
@@ -4274,62 +4736,128 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       var btn = document.getElementById('hamburgerBtn');
       var menu = document.getElementById('mobileMenu');
       if (!btn || !menu) return;
-      function closeMenu() {menu.classList.add('hidden'); btn.classList.remove('hamburger-open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Open menu');}
+      function closeMenu() { menu.classList.add('hidden'); btn.classList.remove('hamburger-open'); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-label', 'Open menu'); }
       function toggleMenu() {
         var isOpen = !menu.classList.contains('hidden');
-        if (isOpen) {closeMenu();} else {menu.classList.remove('hidden'); btn.classList.add('hamburger-open'); btn.setAttribute('aria-expanded', 'true'); btn.setAttribute('aria-label', 'Close menu');}
+        if (isOpen) { closeMenu(); } else { menu.classList.remove('hidden'); btn.classList.add('hamburger-open'); btn.setAttribute('aria-expanded', 'true'); btn.setAttribute('aria-label', 'Close menu'); }
       }
-      btn.addEventListener('click', function (e) {e.stopPropagation(); toggleMenu();});
+      btn.addEventListener('click', function (e) { e.stopPropagation(); toggleMenu(); });
       // Close on link click — link already scrolls via existing header handler, just close menu
       menu.querySelectorAll('.mobile-nav-link').forEach(function (a) {
-        a.addEventListener('click', function () {closeMenu();});
+        a.addEventListener('click', function () { closeMenu(); });
       });
       // Close on outside click / Escape / resize to desktop
-      document.addEventListener('click', function (e) {if (!menu.classList.contains('hidden') && !menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) closeMenu();});
-      document.addEventListener('keydown', function (e) {if (e.key === 'Escape') closeMenu();});
-      window.addEventListener('resize', function () {if (window.innerWidth >= 1024) closeMenu();});
+      document.addEventListener('click', function (e) { if (!menu.classList.contains('hidden') && !menu.contains(e.target) && e.target !== btn && !btn.contains(e.target)) closeMenu(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+      window.addEventListener('resize', function () { if (window.innerWidth >= 1024) closeMenu(); });
     })();
 
-    // ---------- Certs filter — All / Training, counts dynamic from .cert-card ----------
-    (function () {
-      var pills = document.querySelectorAll('#certsPills button[data-filter]');
-      var grid = document.getElementById('certsGrid');
-      var empty = document.getElementById('certsEmpty');
-      if (!pills.length || !grid) return;
-      function updateCertCounts() {
-        var cards = grid.querySelectorAll('.cert-card');
-        var counts = {all: cards.length};
-        cards.forEach(function (c) {
-          var cat = (c.getAttribute('data-category') || '').toLowerCase();
-          if (!cat) return;
-          counts[cat] = (counts[cat] || 0) + 1;
-        });
-        pills.forEach(function (p) {
-          var f = p.getAttribute('data-filter');
-          var span = p.querySelector('.cert-filter-count');
-          if (span) span.textContent = '(' + (counts[f] || 0) + ')';
-        });
-      }
-      function setCertFilter(filter) {
-        pills.forEach(function (btn) {
-          var active = btn.getAttribute('data-filter') === filter;
-          btn.classList.toggle('active', active);
-        });
-        var visible = 0;
-        grid.querySelectorAll('.cert-card').forEach(function (card) {
-          var show = filter === 'all' || (card.getAttribute('data-category') || '').toLowerCase() === filter;
-          card.style.display = show ? '' : 'none';
-          if (show) visible++;
-        });
-        if (empty) empty.hidden = visible !== 0;
-      }
-      pills.forEach(function (btn) {
-        btn.addEventListener('click', function () {setCertFilter(btn.getAttribute('data-filter'));});
+    // ---------- Certs filter + Search + Pagination (Labs jaisa, limit 3) ----------
+    var certsFilter = "all";
+    var CERTS_PAGE_SIZE = 3;
+    var certsPage = 1;
+    var certsSearch = "";
+
+    function updateCertCounts() {
+      var cards = document.querySelectorAll("#certsGrid .cert-card");
+      var counts = { all: cards.length };
+      cards.forEach(function (c) {
+        var cat = (c.getAttribute("data-category") || "").toLowerCase();
+        if (cat) counts[cat] = (counts[cat] || 0) + 1;
       });
-      updateCertCounts();
-      setCertFilter('all');
-    })();
-    // ---------- End Certs filter ----------
+      document.querySelectorAll("#certsPills button").forEach(function (p) {
+        var f = p.getAttribute("data-filter");
+        var span = p.querySelector(".cert-filter-count");
+        if (span) span.textContent = "(" + (counts[f] || 0) + ")";
+      });
+    }
+
+    function getCertsFiltered() {
+      var q = certsSearch.toLowerCase().trim();
+      var all = Array.prototype.slice.call(document.querySelectorAll("#certsGrid .cert-card"));
+      return all.filter(function (card) {
+        var cat = (card.getAttribute("data-category") || "").toLowerCase();
+        var byFilter = (certsFilter === "all" || cat === certsFilter);
+        if (!byFilter) return false;
+        if (!q) return true;
+        var text = (card.textContent || "") + " " + cat;
+        return text.toLowerCase().indexOf(q) !== -1;
+      });
+    }
+
+    function renderCerts() {
+      var filtered = getCertsFiltered();
+      var total = filtered.length;
+      var totalPages = Math.max(1, Math.ceil(total / CERTS_PAGE_SIZE));
+      if (certsPage > totalPages) certsPage = totalPages;
+      if (certsPage < 1) certsPage = 1;
+      var start = (certsPage - 1) * CERTS_PAGE_SIZE;
+      var end = Math.min(start + CERTS_PAGE_SIZE, total);
+
+      document.querySelectorAll("#certsGrid .cert-card").forEach(function (c) { c.style.display = "none"; });
+      filtered.slice(start, end).forEach(function (c) { c.style.display = ""; });
+
+      var showing = document.getElementById("certsShowing");
+      if (showing) {
+        if (total === 0) showing.textContent = "Showing 0 of 0";
+        else if (certsFilter === "training") showing.textContent = "Showing courses completed " + (start + 1) + "-" + end + " of " + total;
+        else if (certsFilter === "aws") showing.textContent = "Showing certifications completed " + (start + 1) + "-" + end + " of " + total;
+        else showing.textContent = "Showing credentials " + (start + 1) + "-" + end + " of " + total;
+      }
+
+      var prevBtn = document.getElementById("certsPrev");
+      var nextBtn = document.getElementById("certsNext");
+      var pageInfo = document.getElementById("certsPageInfo");
+      var pag = document.getElementById("certsPagination");
+      if (pageInfo) pageInfo.textContent = "Page " + certsPage + " of " + totalPages;
+      if (prevBtn) prevBtn.disabled = (certsPage <= 1);
+      if (nextBtn) nextBtn.disabled = (certsPage >= totalPages);
+      if (pag) pag.style.display = (total === 0) ? "none" : "flex";
+
+      var noEl = document.getElementById("certsNoResults");
+      if (noEl) {
+        if (total === 0) {
+          noEl.style.display = "block";
+          noEl.textContent = certsSearch.trim() ? 'No credentials found for "' + certsSearch.trim() + '".' : "No credentials in this filter.";
+        } else noEl.style.display = "none";
+      }
+      var empty = document.getElementById("certsEmpty");
+      if (empty) empty.hidden = true;
+    }
+
+    function setCertFilter(filter) {
+      certsFilter = filter;
+      certsPage = 1;
+      document.querySelectorAll("#certsPills button").forEach(function (btn) {
+        btn.classList.toggle("active", btn.getAttribute("data-filter") === filter);
+      });
+      renderCerts();
+    }
+
+    document.querySelectorAll("#certsPills button").forEach(function (btn) {
+      btn.addEventListener("click", function () { setCertFilter(btn.getAttribute("data-filter")); });
+    });
+
+    var certsSearchInput = document.getElementById("certsSearch");
+    if (certsSearchInput) {
+      certsSearchInput.addEventListener("input", function () {
+        certsSearch = certsSearchInput.value;
+        certsPage = 1;
+        renderCerts();
+      });
+    }
+
+    var certsPrevBtn = document.getElementById("certsPrev");
+    if (certsPrevBtn) certsPrevBtn.addEventListener("click", function () { if (certsPage > 1) { certsPage--; renderCerts(); } });
+    var certsNextBtn = document.getElementById("certsNext");
+    if (certsNextBtn) certsNextBtn.addEventListener("click", function () {
+      var totalPages = Math.max(1, Math.ceil(getCertsFiltered().length / CERTS_PAGE_SIZE));
+      if (certsPage < totalPages) { certsPage++; renderCerts(); }
+    });
+
+    updateCertCounts();
+    setCertFilter("all");
+    // ---------- End Certs Pagination + Search ----------
 
   </script>
 </body>
