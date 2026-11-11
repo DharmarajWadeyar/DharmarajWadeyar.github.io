@@ -1524,7 +1524,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       }
     }
 
-    .hero-gloss::after {
+    /* .hero-gloss::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -1532,6 +1532,21 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       transform: translateX(-130%);
       animation: gloss-sweep 2.8s ease-in-out infinite;
       pointer-events: none
+    } */
+
+    .hero-gloss::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .65) 46%, rgba(255, 255, 255, .18) 54%, transparent 66%);
+      transform: translateX(-130%);
+      transition: transform .85s ease-out;
+      animation: none;
+      pointer-events: none
+    }
+
+    .hero-gloss:hover::after {
+      transform: translateX(130%);
     }
 
     .globe {
@@ -1939,11 +1954,18 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       white-space: nowrap
     }
 
-    .logo-item:hover {
+    /* .logo-item:hover {
       transform: translate3d(var(--x), var(--y), var(--z)) scale(1.7) !important;
       z-index: 999 !important;
       box-shadow: 0 0 0 2px #0284C7, 0 16px 40px rgba(10, 35, 66, .6) !important;
       filter: brightness(1.3);
+    } */
+
+    .logo-item:hover {
+      transform: translate3d(var(--x), var(--y), var(--z)) scale(1.15) !important;
+      z-index: 999 !important;
+      box-shadow: 0 0 0 2px #0284C7, 0 10px 24px rgba(10, 35, 66, .35) !important;
+      filter: brightness(1.1);
     }
 
     .globe-wrap {
@@ -3383,6 +3405,46 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         transform: translateX(100%);
       }
     }
+
+
+
+
+    /* ===== GLOBE DRAG - ADD AT END ===== */
+    .globe-wrap {
+      cursor: grab;
+      touch-action: none;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .globe-wrap.globe-dragging {
+      cursor: grabbing;
+    }
+
+    .globe-wrap.globe-dragging .logo-item {
+      pointer-events: none;
+    }
+
+    #globe {
+      animation: none !important;
+      will-change: transform;
+    }
+
+    .globe {
+      animation: none !important;
+    }
+
+    .logo-item img {
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-select: none;
+    }
+
+    /* ===== END GLOBE DRAG ===== */
+
+    #journey .journey-line::after {
+      display: none !important;
+    }
   </style>
 </head>
 
@@ -3464,18 +3526,16 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               <path d="m12 5 7 7-7 7"></path>
             </svg></button> -->
 
-
           <button onclick="scrollToSection('labs')"
             class="hero-gloss w-full sm:w-auto px-7 rounded-full text-white font-bold text- flex items-center justify-center gap-2 hover:opacity-95"
             style="background: var(--grad); box-shadow: 0 12px 28px rgba(2,132,199,.35); height:52px; display:inline-flex; align-items:center; justify-content:center;">View
-            Projects
+            Projects</button>
 
-            <button
-              onclick="window.open('https://drive.google.com/file/d/1pFCQA2CJQtNx5wvLi-3EEmBdJBbBbqyy/view','_blank')"
-              class="btn-gloss-hover w-full sm:w-auto h- px-7 rounded-full border font-semibold text-"
-              style="border-color: var(--border); color: var(--text); background: var(--surface); height:52px; display:inline-flex; align-items:center; justify-content:center;">View
-              Resume</button>
-
+          <button
+            onclick="window.open('https://drive.google.com/file/d/1pFCQA2CJQtNx5wvLi-3EEmBdJBbBbqyy/view','_blank')"
+            class="btn-gloss-hover w-full sm:w-auto h- px-7 rounded-full border font-semibold text-"
+            style="border-color: var(--border); color: var(--text); background: var(--surface); height:52px; display:inline-flex; align-items:center; justify-content:center;">View
+            Resume</button>
         </div>
         <div class="mt-[64px] grid grid-cols-2 md:grid-cols-4 gap-y-6 max-w-[920px] text-left">
           <div class="py-3 px-3 md:border-r md:border-[var(--border)] border-r border-[var(--border)] md:border-r">
@@ -3534,7 +3594,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             </div>
             <h2
               style="font-family:'Archivo',sans-serif;font-size:clamp(42px,6vw,68px);line-height:.9;margin:18px 0 0;font-weight:800">
-              CLOUD<br>
+              TECH<br>
               <span
                 style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">STACK</span>
             </h2>
@@ -3571,9 +3631,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         </p> -->
       </div>
       <div id="certsPills" class="flex flex-wrap gap-2 mt-10" role="tablist" aria-label="Filter credentials">
-        <button data-filter="all" class="pill active">All <span class="cert-filter-count">(5)</span></button>
-        <button data-filter="training" class="pill"> Training <span class="cert-filter-count">(1)</span></button>
-        <button data-filter="skillbadges" class="pill">Skill Badges <span class="cert-filter-count">(4)</span></button>
+        <button data-filter="all" class="pill active">All <span class="cert-filter-count"></span></button>
+        <button data-filter="training" class="pill"> Training <span class="cert-filter-count"></span></button>
+        <button data-filter="skillbadges" class="pill">Skill Badges <span class="cert-filter-count"></span></button>
       </div>
       <!-- Certs Search + Showing (Labs jaisa) -->
       <div id="certsSearchWrap">
@@ -3631,6 +3691,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               </svg>View Projects</button>
           </div>
         </div>
+
         <div data-category="skillbadges" class="cert-card cert-dark">
           <div>
             <span class="cert-badge cert-badge-cert"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
@@ -3676,7 +3737,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               Badge</a>
           </div>
         </div>
-        <!-- <div data-category="aws" class="cert-card cert-dark">
+        <!-- DEMO CARD PAGINATION -->
+        <!-- <div data-category="skillbadges" class="cert-card cert-dark">
           <div>
             <span class="cert-badge cert-badge-cert"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
@@ -3712,13 +3774,14 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             <li>✓ Security &amp; Compliance</li>
             <li>✓ Billing &amp; Pricing</li>
           </ul>
-
-
           <div class="cert-footer">
   <div class="font-display">Valid till 2028</div>
   <a href="https://cp.certmetrics.com/amazon/en/public/verify/credential" target="_blank" rel="noopener" class="cert-dark-btn mt-4">↗ Verify Credential</a>
 </div>
         </div> -->
+
+
+
       </div>
       <div id="certsPagination">
         <button id="certsPrev" class="pill" type="button">← Prev</button>
@@ -3739,7 +3802,9 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
               PROJECTS</span>
             <h2 class="font-display text-[36px] md:text-[44px] leading-[1.05] mt-5 tracking-tight">
               Hands-On Projects</h2>
-          </div><button
+          </div>
+          
+          <button onclick="window.open('https://github.com/DharmarajWadeyar','_blank')"
             class="font-bold text-[13px] tracking-[0.1em] inline-flex items-center gap-1.5 hover:opacity-70">MORE
             ON GITHUB <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -4046,9 +4111,12 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                   <path
                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
                   </path>
-                </svg></span><a href="tel:+91XXXXXXXXXX" style="color: var(--text); text-decoration: none;">+91
-                8928350830</a></p>
-            <div class="flex gap-3 pt-1"><a href="https://linkedin.com" target="_blank" rel="noopener"
+                </svg></span>
+              <a href="tel:+918928350830" style="color: var(--text); text-decoration: none;">+91 8928350830</a>
+
+            </p>
+            <div class="flex gap-3 pt-1"><a href="https://www.linkedin.com/in/dharmaraj-wadeyar-29a6652bb/"
+                target="_blank" rel="noopener"
                 class="h-11 px-4 rounded-full border flex items-center gap-2 text-[14px] font-semibold hover:opacity-70"
                 style="border-color: var(--border); background: var(--surface-2);"><svg
                   xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -4058,7 +4126,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                   </path>
                   <rect width="4" height="12" x="2" y="9"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
-                </svg> LinkedIn</a><a href="https://github.com" target="_blank" rel="noopener"
+                </svg> LinkedIn</a><a href="https://github.com/DharmarajWadeyar" target="_blank" rel="noopener"
                 class="h-11 px-4 rounded-full border flex items-center gap-2 text-[14px] font-semibold hover:opacity-70"
                 style="border-color: var(--border); background: var(--surface-2);"><svg
                   xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -4098,12 +4166,12 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         <div>
           <p class="font-display text-[14px] leading-tight">© 2026 Dharmaraj
             Wadeyar • Built for Uptime</p>
-          <p id="lastModified" class="mt-1 text-[12px]" style="color: var(--muted);">• Last Modified: December 31, 1969
-          </p>
+          <!-- <p id="lastModified" class="mt-1 text-[12px]" style="color: var(--muted);">• Last Modified: December 31, 1969
+          </p> -->
         </div>
-        <button id="checkUpdateBtn"
+        <!-- <button id="checkUpdateBtn"
           class="h-9 px-4 rounded-full border text-[13px] font-semibold hover:opacity-70 shrink-0 self-start sm:self-center"
-          style="border-color: var(--border);">Check for Update</button>
+          style="border-color: var(--border);">Check for Update</button> -->
       </div>
     </footer>
   </div>
@@ -4308,7 +4376,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       if (pageInfo) pageInfo.textContent = "Page " + labsPage + " of " + totalPages;
       if (prevBtn) prevBtn.disabled = (labsPage <= 1);
       if (nextBtn) nextBtn.disabled = (labsPage >= totalPages);
-      if (pag) pag.style.display = (total === 0) ? "none" : "flex";
+      if (pag) pag.style.display = (totalPages <= 1) ? "none" : "flex";
 
       var noEl = document.getElementById("labsNoResults");
       if (noEl) {
@@ -4409,14 +4477,14 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       });
     }
 
-    // ---------- Last Modified ----------
-    const lastModEl = document.getElementById("lastModified");
-    if (lastModEl && typeof document !== "undefined" && document.lastModified) {
-      try {
-        const d = new Date(document.lastModified).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
-        lastModEl.textContent = "\u2022 Last Modified: " + d;
-      } catch (err) { }
-    }
+    // ---------- Last Modified GITHUB CHECK UPDATE BUTTON----------
+    // const lastModEl = document.getElementById("lastModified");
+    // if (lastModEl && typeof document !== "undefined" && document.lastModified) {
+    //   try {
+    //     const d = new Date(document.lastModified).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
+    //     lastModEl.textContent = "\u2022 Last Modified: " + d;
+    //   } catch (err) { }
+    // }
 
     // ---------- External links (same as original) ----------
     function fixExternalLinks() {
@@ -4602,69 +4670,69 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
   <script>
     /* ===== CAREER SYNC — one clock for line tip + dot blink =====
     */
-    (function () {
-      var journey = document.getElementById('journey');
-      var line = journey ? journey.querySelector('.journey-line') : null;
-      var dots = journey ? Array.prototype.slice.call(journey.querySelectorAll('.career-dot')) : [];
-      if (!journey || !line || !dots.length) return;
-      var DURATION = 2800;      // same as old timelineFlow 2.8s
-      var GRAD_H = 140;         // background-size height
-      var TIP_OFFSET = 20;      // tip = top edge + 20px (visible glow starts here)
-      var HOLD_MS = 320;        // how long dot stays white while line passes over it
-      var start = performance.now();
-      var dotY = [];            // dot centre Y relative to line top
-      var hitAt = dots.map(function () { return -1; }); // last cycle when this dot was hit
-      var prevTip = null;
-      var lastCycle = -1;
+    // (function () {
+    //   var journey = document.getElementById('journey');
+    //   var line = journey ? journey.querySelector('.journey-line') : null;
+    //   var dots = journey ? Array.prototype.slice.call(journey.querySelectorAll('.career-dot')) : [];
+    //   if (!journey || !line || !dots.length) return;
+    //   var DURATION = 2800;      // same as old timelineFlow 2.8s
+    //   var GRAD_H = 140;         // background-size height
+    //   var TIP_OFFSET = 20;      // tip = top edge + 20px (visible glow starts here)
+    //   var HOLD_MS = 320;        // how long dot stays white while line passes over it
+    //   var start = performance.now();
+    //   var dotY = [];            // dot centre Y relative to line top
+    //   var hitAt = dots.map(function () { return -1; }); // last cycle when this dot was hit
+    //   var prevTip = null;
+    //   var lastCycle = -1;
 
-      function measure() {
-        var lineRect = line.getBoundingClientRect();
-        dotY = dots.map(function (d) {
-          var r = d.getBoundingClientRect();
-          return (r.top + r.height / 2) - lineRect.top;
-        });
-      }
-      measure();
-      window.addEventListener('resize', measure);
-      // Fonts / layout can shift heights after load
-      window.addEventListener('load', measure);
-      setTimeout(measure, 500);
-      setTimeout(measure, 1500);
+    //   function measure() {
+    //     var lineRect = line.getBoundingClientRect();
+    //     dotY = dots.map(function (d) {
+    //       var r = d.getBoundingClientRect();
+    //       return (r.top + r.height / 2) - lineRect.top;
+    //     });
+    //   }
+    //   measure();
+    //   window.addEventListener('resize', measure);
+    //   // Fonts / layout can shift heights after load
+    //   window.addEventListener('load', measure);
+    //   setTimeout(measure, 500);
+    //   setTimeout(measure, 1500);
 
-      function frame(now) {
-        var elapsed = (now - start) % DURATION;
-        var progress = elapsed / DURATION; // 0 -> 1, bottom -> top
-        var H = line.getBoundingClientRect().height;
-        // Gradient block top: H-140 at progress 0, -140 at progress 1
-        var imgTop = (H - GRAD_H) - progress * H;
-        line.style.setProperty('--line-y', imgTop + 'px');
-        var tipY = imgTop + TIP_OFFSET;
+    //   function frame(now) {
+    //     var elapsed = (now - start) % DURATION;
+    //     var progress = elapsed / DURATION; // 0 -> 1, bottom -> top
+    //     var H = line.getBoundingClientRect().height;
+    //     // Gradient block top: H-140 at progress 0, -140 at progress 1
+    //     var imgTop = (H - GRAD_H) - progress * H;
+    //     line.style.setProperty('--line-y', imgTop + 'px');
+    //     var tipY = imgTop + TIP_OFFSET;
 
-        // New cycle started -> allow all dots to be hit again
-        var cycle = Math.floor((now - start) / DURATION);
-        if (cycle !== lastCycle) { lastCycle = cycle; prevTip = null; }
+    //     // New cycle started -> allow all dots to be hit again
+    //     var cycle = Math.floor((now - start) / DURATION);
+    //     if (cycle !== lastCycle) { lastCycle = cycle; prevTip = null; }
 
-        // Tip moves upward, so Y decreases. Hit when tip crosses dot centre from below.
-        if (prevTip !== null) {
-          dots.forEach(function (dot, i) {
-            var y = dotY[i];
-            if (y === undefined) return;
-            var crossed = (prevTip > y && tipY <= y);
-            if (crossed) {
-              dot.classList.add('dot-hit');
-              hitAt[i] = now;
-            }
-            // Pass completely -> back to normal after HOLD_MS
-            if (dot.classList.contains('dot-hit') && hitAt[i] !== -1 && (now - hitAt[i] > HOLD_MS)) {
-              dot.classList.remove('dot-hit');
-            }
-          });
-        }
-        prevTip = tipY;
-        requestAnimationFrame(frame);
-      }
-      requestAnimationFrame(frame);
-    })();
+    //     // Tip moves upward, so Y decreases. Hit when tip crosses dot centre from below.
+    //     if (prevTip !== null) {
+    //       dots.forEach(function (dot, i) {
+    //         var y = dotY[i];
+    //         if (y === undefined) return;
+    //         var crossed = (prevTip > y && tipY <= y);
+    //         if (crossed) {
+    //           dot.classList.add('dot-hit');
+    //           hitAt[i] = now;
+    //         }
+    //         // Pass completely -> back to normal after HOLD_MS
+    //         if (dot.classList.contains('dot-hit') && hitAt[i] !== -1 && (now - hitAt[i] > HOLD_MS)) {
+    //           dot.classList.remove('dot-hit');
+    //         }
+    //       });
+    //     }
+    //     prevTip = tipY;
+    //     requestAnimationFrame(frame);
+    //   }
+    //   requestAnimationFrame(frame);
+    // })();
 
 
 
@@ -4751,7 +4819,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
       if (pageInfo) pageInfo.textContent = "Page " + certsPage + " of " + totalPages;
       if (prevBtn) prevBtn.disabled = (certsPage <= 1);
       if (nextBtn) nextBtn.disabled = (certsPage >= totalPages);
-      if (pag) pag.style.display = (total === 0) ? "none" : "flex";
+      if (pag) pag.style.display = (totalPages <= 1) ? "none" : "flex";
 
       var noEl = document.getElementById("certsNoResults");
       if (noEl) {
@@ -4798,6 +4866,120 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
     setCertFilter("all");
     // ---------- End Certs Pagination + Search ----------
 
+  </script>
+
+  <script>
+    /* ===== GLOBE DRAG + 2 SEC PAUSE + HOVER FREEZE + RESET + AUTO ===== */
+    (function () {
+      var wrap = document.querySelector('.globe-wrap');
+      var globeEl = document.getElementById('globe');
+      if (!wrap || !globeEl) return;
+
+      var rotY = 0, rotX = 12;
+      var dragging = false, hoveringLogo = false;
+      var lastX = 0, lastY = 0;
+      var autoOn = true;
+      var returning = false, homeY = 0;
+      var waitingToReset = false, waitingElapsed = 0;
+      var lastTime = performance.now();
+      var AUTO_SPEED = 0.15;
+
+      function apply() {
+        globeEl.style.transform = 'translate(-50%,-50%) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg)';
+      }
+
+      function loop() {
+        var now = performance.now();
+        var dt = now - lastTime;
+        lastTime = now;
+        if (dt > 50) dt = 50; // tab switch par bada jump na aaye
+
+        if (!dragging) {
+          if (hoveringLogo && !wrap.matches(':hover')) hoveringLogo = false;
+
+          if (waitingToReset) {
+            // FIX - hover ke time 2 sec timer ruk jayega
+            if (!hoveringLogo) {
+              waitingElapsed += dt;
+              if (waitingElapsed >= 2000) {
+                waitingToReset = false;
+                waitingElapsed = 0;
+                homeY = Math.round(rotY / 360) * 360;
+                returning = true;
+              }
+            }
+            apply();
+          } else if (returning) {
+            // FIX - hover ke time reset bhi ruk jayega
+            if (!hoveringLogo) {
+              rotX += (12 - rotX) * 0.10;
+              rotY += (homeY - rotY) * 0.10;
+              if (Math.abs(12 - rotX) < 0.2 && Math.abs(homeY - rotY) < 0.5) {
+                rotX = 12;
+                rotY = 0;
+                returning = false;
+                autoOn = true;
+              }
+            }
+            apply();
+          } else if (autoOn && !hoveringLogo) {
+            rotY += AUTO_SPEED;
+            apply();
+          } else {
+            apply();
+          }
+        }
+        requestAnimationFrame(loop);
+      }
+
+      function endDrag() {
+        if (!dragging) return;
+        dragging = false;
+        wrap.classList.remove('globe-dragging');
+        autoOn = false;
+        returning = false;
+        waitingToReset = true;
+        waitingElapsed = 0; // 2 sec count fresh start
+      }
+
+      wrap.addEventListener('pointerdown', function (e) {
+        dragging = true;
+        returning = false;
+        waitingToReset = false;
+        waitingElapsed = 0;
+        autoOn = false;
+        lastX = e.clientX; lastY = e.clientY;
+        wrap.classList.add('globe-dragging');
+        try { wrap.setPointerCapture(e.pointerId); } catch (err) { }
+        e.preventDefault();
+      });
+
+      wrap.addEventListener('pointermove', function (e) {
+        if (!dragging) {
+          hoveringLogo = !!(e.target && e.target.closest && e.target.closest('.logo-item'));
+          return;
+        }
+        var dx = e.clientX - lastX;
+        var dy = e.clientY - lastY;
+        lastX = e.clientX; lastY = e.clientY;
+        rotY += dx * 0.5;
+        rotX -= dy * 0.3; // drag up = icons go up
+        if (rotX > 35) rotX = 35;
+        if (rotX < -25) rotX = -25;
+        apply();
+      });
+
+      wrap.addEventListener('pointerup', endDrag);
+      wrap.addEventListener('pointercancel', endDrag);
+
+      wrap.addEventListener('pointerleave', function () {
+        hoveringLogo = false;
+        if (dragging) endDrag();
+      });
+
+      apply();
+      loop();
+    })();
   </script>
 </body>
 
