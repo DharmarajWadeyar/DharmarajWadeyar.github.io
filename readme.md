@@ -1,1 +1,3 @@
-![Repo Views](https://komarev.com/ghpvc/?username=dharmarajwadeyar&repo=dharmarajwadeyar.github.io)
+
+Profile Views: ![Profile Views](https://komarev.com/ghpvc/?username=dharmarajwadeyar)
+Repo Views: ![Repo Views](https://komarev.com/ghpvc/?username=dharmarajwadeyar&repo=dharmarajwadeyar.github.io)
